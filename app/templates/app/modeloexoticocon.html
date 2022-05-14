@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exoticos</title>
+    <link rel="stylesheet" href="{%static 'app/css/style.css' %} ">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-success navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'sinregistro' %}"><img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-256.png"
+                    width="130" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'perro1con' %}"><i class="fa-solid fa-dog"></i> Perros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'gatos1con' %}"><i class="fa-solid fa-cat"></i> Gatos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'exotico1con' %}"><i class="fa-solid fa-frog"></i> Exoticos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'fundacion' %}"><i class="fa-solid fa-house-chimney-medical"></i> Nuestra
+                        Fundación</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'historial' %}"><i class="fa-solid fa-cart-shopping"></i>Historial de pedidos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="segui.html"><i class="fa-solid fa-truck"></i> Seguimiento</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link text-white btn btn-success" data-toggle="modal" data-target="#myModal" href=""><i
+                            class="fa-solid fa-comment"></i> Chat</a>
+                </li>
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="vercarro.html"><i class="fa-solid fa-cart-shopping"></i> Ver Carrito</a>
+                
+
+
+                    
+                    <!-- Button to Open the Modal -->
+
+
+                    <!-- The Modal -->
+                    <div class="modal" id="myModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">PetShop</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <div class="page-content page-container" id="page-content">
+                                        <div class="padding">
+                                            <div class="row container d-flex justify-content-center">
+                                                <div class="col-md-15">
+                                                    <div class="card card-bordered">
+                                                        <div class="card-header">
+                                                            <h4 class="card-title"><strong>Chat</strong></h4> <a
+                                                                class="btn btn-xs btn-secondary" href="#"
+                                                                data-abc="true">Conversa con nosotros</a>
+                                                        </div>
+                                                        <div class="ps-container ps-theme-default ps-active-y"
+                                                            id="chat-content"
+                                                            style="overflow-y: scroll !important; height:400px !important;">
+                                                            <div class="media media-chat"> <img class="avatar"
+                                                                    src="https://img.icons8.com/color/36/000000/administrator-male.png"
+                                                                    alt="...">
+                                                                <div class="media-body">
+                                                                    <p>Hola!</p>
+                                                                    <p>Como estas???</p>
+                                                                    <p>Me Encantaria poder ayudarte!<br> Que estas
+                                                                        buscando???</p>
+                                                                    <p class="meta"><time datetime="2018">13:51</time>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="publisher bt-1 border-light"> <img
+                                                                class="avatar avatar-xs"
+                                                                src="https://img.icons8.com/color/36/000000/administrator-male.png"
+                                                                alt="..."> <input class="publisher-input" type="text"
+                                                                placeholder="Escribe Aqui...!"> <span
+                                                                class="publisher-btn file-group"> <i
+                                                                    class="fa fa-paperclip file-browser"></i> <input
+                                                                    type="file"> </span> <a class="publisher-btn"
+                                                                href="#" data-abc="true"><i class="fa fa-smile"></i></a>
+                                                            <a class="publisher-btn text-info" href="#"
+                                                                data-abc="true"><i class="fa fa-paper-plane"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+
+
+
+
+
+
+
+
+
+
+            </ul>
+
+
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    
+
+                    <li class="nav-item">
+                        
+                        <a class="nav-link text-white" href="{% url 'index' %}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesion</a>
+
+                    </li>
+
+                </ul>
+            </div>
+
+            
+
+
+        </div>
+    </nav>
+
+
+    {% block contenido %}
+
+
+    <div class="jumbotron5 p-5 bg-danger text-white rounded">
+        <h1>Seccion Exoticos</h1>
+        <p>Aqui  podras encontrar productos y animales exoticos</p>
+      </div>
+
+      <br>
+
+      <div class="btn-group col-md-4 col-sm-6">
+        <button type="button" class="btn btn-primary">Seleccione tipo de animal</button>
+        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+          <span class="caret"></span>
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="conechapa.html">Conejos</a>
+            <a class="dropdown-item" href="pajarojaula.html">Pajaros</a>
+            <a class="dropdown-item" href="pecerasreptiles.html">Reptiles</a>
+          </div>
+        </div>
+  
+        <br>
+        <br>
+  
+
+
+    <div class="container mt-100">
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                        <div class="inner">
+                            <div class="main-img"><img
+                                    src="http://www.santiagopetstore.cl/tienda/image/cache/catalog/placas-350x350.jpg"
+                                    alt="Category" width="200"></div>
+                            <div class="thumblist"><img
+                                    src="https://m.media-amazon.com/images/I/413NLMdah2L.jpg"
+                                    alt="Category" width="100"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSM1ekieRIDCe4Ak9hbPmw2dQd73WMzV4LJg&usqp=CAU"
+                                    alt="Category" width="100"></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Medallas de identificacion</h4>
+                        <p class="text-muted">Precios desde $2.500</p><a class="btn btn-outline-primary btn-sm" href="#"
+                            data-abc="true">Ver Productos</a>
+                            <br>  
+                            <br>
+                            <a class="nav-link text-white" href="#"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                        <div class="inner">
+                            <div class="main-img"><img
+                                    src="https://ae01.alicdn.com/kf/HTB1oBpRG4SYBuNjSspjq6x73VXac.jpg"
+                                    alt="Category" width="187"></div>
+                            <div class="thumblist"><img
+                                    src="data:image/jpeg;base64,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"
+                                    alt="Category" width="100"><img
+                                    src="data:image/jpeg;base64,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"
+                                    alt="Category" width="100"></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Correas</h4>
+                        <p class="text-muted">Precios desde $3.500</p><a class="btn btn-outline-primary btn-sm" href="#"
+                            data-abc="true">Ver Productos</a>
+                            <br>  
+                            <br>
+                            <a class="nav-link text-white" href="#"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            
+
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                        <div class="inner">
+                            <div class="main-img"><img
+                                    src="https://dojiw2m9tvv09.cloudfront.net/11787/product/L_mazuricobayo7628.jpg?184"
+                                    alt="Category" width="180"></div>
+                            <div class="thumblist"><img
+                                    src="https://dojiw2m9tvv09.cloudfront.net/11787/product/M_mazurichinchilla6725.jpg?184"
+                                    alt="Category" width="100"><img
+                                    src="https://www.acws.cl/productos/1214-large_default/mazuri-conejo-timothy-rabbit-diet-1kg.jpg" alt="Category"
+                                    width="100"></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Variedad Pellets</h4>
+                        <p class="text-muted">Precios desde $4.990</p><a class="btn btn-outline-primary btn-sm" href="#"
+                            data-abc="true">Ver Productos</a>
+                            <br>  
+                            <br>
+                            <a class="nav-link text-white" href="#"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    
+
+
+
+    <div class="container mt-100">
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                        <div class="inner">
+                            <div class="main-img"><img
+                                    src="https://blog.securibath.com/wp-content/uploads/2009/03/web-fishbowl-dont-piss-me-off.jpg"
+                                    alt="Category" width="200"></div>
+                            <div class="thumblist"><img
+                                    src="https://static.zoomalia.com/prod_img/5168/la_boule-soufflee-230-8475.jpg"
+                                    alt="Category" width="100"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLMAR7QcI41wICYaK-hEgm-Mf3MUjytvs40j8iv8fuScoIQfvam93-qATWgpBCYZ-X_hs&usqp=CAU"
+                                    alt="Category" width="100"></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Pesceras</h4>
+                        <p class="text-muted">Precios desde $8.990</p><a class="btn btn-outline-primary btn-sm" href="#"
+                            data-abc="true">Ver Productos</a>
+                            <br>  
+                            <br>
+                            <a class="nav-link text-white" href="#"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                        <div class="inner">
+                            <div class="main-img"><img
+                                    src="https://www.tusmascotas.cl/wp-content/uploads/2020/09/spikes-dinner.jpg"
+                                    alt="Category" width="150"></div>
+                            <div class="thumblist"><img
+                                    src="https://aquafluor.cl/wp-content/uploads/2021/06/spike-s-meaty-feast-alimento-humedo-140gr.jpg"
+                                    alt="Category" width="100"><img
+                                    src="https://s3.amazonaws.com/bsalemarket/15305/product/5033944490106default.jpg"
+                                    alt="Category" width="100"></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Alimento para erizos</h4>
+                        <p class="text-muted">Precios desde $5.990</p><a class="btn btn-outline-primary btn-sm" href="#"
+                            data-abc="true">Ver Productos</a>
+                            <br>  
+                            <br>
+                            <a class="nav-link text-white" href="#"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                        <div class="inner">
+                            <div class="main-img"><img
+                                    src="https://i.etsystatic.com/6794023/r/il/a51aa7/1536575500/il_fullxfull.1536575500_lcwi.jpg"
+                                    alt="Category" width="205"></div>
+                            <div class="thumblist"><img
+                                    src="https://i.etsystatic.com/22647106/r/il/93ef3c/3166070895/il_570xN.3166070895_4s6y.jpg"
+                                    alt="Category" width="100"><img
+                                    src="https://papelyaguja.com/wp-content/uploads/2021/03/PYA-bandana-conejo-cerrada.jpg" alt="Category"
+                                    width="100"></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Bandanas Para Conejos</h4>
+                        <p class="text-muted">Precios desde $3.500</p><a class="btn btn-outline-primary btn-sm" href="#"
+                            data-abc="true">Ver Productos</a>
+                            <br>  
+                            <br>
+                            <a class="nav-link text-white" href="#"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+    {% endblock %}
+
+
+
+
+
+    <!-- Center-aligned -->
+    <ul class="pagination justify-content-center" style="margin:20px 0">
+        <li class="page-item"><a class="page-link" href="exotico2.html">Siguiente</a></li>
+        <li class="page-item"><a class="page-link" href="exotico2.html">2</a></li>
+        
+    </ul>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-info text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/petshop.cl"
+                    role="button"><i class="fab fa-facebook-f"></i></a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-twitter"></i></a>
+
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-google"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1"
+                    href="https://www.instagram.com/fundacionanimalia/?hl=es" role="button"><i
+                        class="fab fa-instagram"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1"
+                    href="https://www.linkedin.com/in/jose-agurto-8165aa223/" role="button"><i
+                        class="fab fa-linkedin-in"></i></a>
+
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1"
+                    href="https://github.com/Bryan747474/Caso/settings/access?guidance_task=" role="button"><i
+                        class="fab fa-github"></i></a>
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Section: Form -->
+            <section class="">
+                <form action="">
+                    <!--Grid row-->
+                    <div class="row d-flex justify-content-center">
+                        <!--Grid column-->
+                        <div class="col-auto">
+                            <p class="pt-2">
+                                <strong>Subscribirse a nuestro boletin</strong>
+                            </p>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-5 col-12">
+                            <!-- Email input -->
+                            <div class="form-outline form-white mb-4">
+                                <input type="email" id="form5Example21" class="form-control" />
+                                <label class="form-label" for="form5Example21">Correo</label>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-auto">
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-outline-light mb-4">
+                                Subscribirse
+                            </button>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </form>
+            </section>
+            <!-- Section: Form -->
+
+            <!-- Section: Text -->
+            <section class="mb-4">
+                <p>
+                    Pagina Web dedicada exclusivamente a la adopcion y la adquicision de animales domesticos y exoticos
+                    asi como tambien alimentos para estos.
+                </p>
+            </section>
+            <!-- Section: Text -->
+
+
+        </div>
+
+
+
+        <div class="text-center p-3" style="background-color: rgb(167, 98, 54);">
+            © 2022 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">Pet Shop.com</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+</body>
+
+</html>

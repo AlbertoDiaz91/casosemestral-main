@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatos</title>
+    <link rel="stylesheet" href="{%static 'app/css/style.css' %} ">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-success navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'sinregistro' %}"><img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-256.png"
+                    width="130" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'perro1con' %}"><i class="fa-solid fa-dog"></i> Perros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'gatos1con' %}"><i class="fa-solid fa-cat"></i> Gatos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'exotico1con' %}"><i class="fa-solid fa-frog"></i> Exoticos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'fundacion' %}"><i class="fa-solid fa-house-chimney-medical"></i> Nuestra
+                        Fundación</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'historial' %}"><i class="fa-solid fa-cart-shopping"></i>Historial de pedidos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="segui.html"><i class="fa-solid fa-truck"></i> Seguimiento</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link text-white btn btn-success" data-toggle="modal" data-target="#myModal" href=""><i
+                            class="fa-solid fa-comment"></i> Chat</a>
+                </li>
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="vercarro.html"><i class="fa-solid fa-cart-shopping"></i> Ver Carrito</a>
+                
+
+
+                    
+                    <!-- Button to Open the Modal -->
+
+
+                    <!-- The Modal -->
+                    <div class="modal" id="myModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">PetShop</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <div class="page-content page-container" id="page-content">
+                                        <div class="padding">
+                                            <div class="row container d-flex justify-content-center">
+                                                <div class="col-md-15">
+                                                    <div class="card card-bordered">
+                                                        <div class="card-header">
+                                                            <h4 class="card-title"><strong>Chat</strong></h4> <a
+                                                                class="btn btn-xs btn-secondary" href="#"
+                                                                data-abc="true">Conversa con nosotros</a>
+                                                        </div>
+                                                        <div class="ps-container ps-theme-default ps-active-y"
+                                                            id="chat-content"
+                                                            style="overflow-y: scroll !important; height:400px !important;">
+                                                            <div class="media media-chat"> <img class="avatar"
+                                                                    src="https://img.icons8.com/color/36/000000/administrator-male.png"
+                                                                    alt="...">
+                                                                <div class="media-body">
+                                                                    <p>Hola!</p>
+                                                                    <p>Como estas???</p>
+                                                                    <p>Me Encantaria poder ayudarte!<br> Que estas
+                                                                        buscando???</p>
+                                                                    <p class="meta"><time datetime="2018">13:51</time>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="publisher bt-1 border-light"> <img
+                                                                class="avatar avatar-xs"
+                                                                src="https://img.icons8.com/color/36/000000/administrator-male.png"
+                                                                alt="..."> <input class="publisher-input" type="text"
+                                                                placeholder="Escribe Aqui...!"> <span
+                                                                class="publisher-btn file-group"> <i
+                                                                    class="fa fa-paperclip file-browser"></i> <input
+                                                                    type="file"> </span> <a class="publisher-btn"
+                                                                href="#" data-abc="true"><i class="fa fa-smile"></i></a>
+                                                            <a class="publisher-btn text-info" href="#"
+                                                                data-abc="true"><i class="fa fa-paper-plane"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+
+
+
+
+
+
+
+
+
+
+            </ul>
+
+
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    
+
+                    <li class="nav-item">
+                        
+                        <a class="nav-link text-white" href="{% url 'index' %}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesion</a>
+
+                    </li>
+
+                </ul>
+            </div>
+
+            
+
+
+        </div>
+    </nav>
+
+
+    {% block contenido %}
+
+
+    <div class="jumbotron5  p-5 bg-danger text-white rounded">
+        <h1>Seccion Gatitos</h1>
+        <p>Aqui  podras encontrar productos y accesorios para tus felinos</p>
+      </div>
+
+      <br>
+      <br>
+
+
+      <ul class="nav nav-pills">
+        <li class="nav-item col-md-2 col-sm-1">
+          <a class="nav-link active" href="collargatoscon.html">Medallas</a>
+        </li>
+        <li class="nav-item col-md-2 col-sm-6">
+            <a class="nav-link active" href="correagatoscon.html">Correas</a>
+          </li>
+          <li class="nav-item col-md-2 col-sm-6">
+            <a class="nav-link active" href="bandanagatoscon.html">Bandanas</a>
+          </li>
+          <li class="nav-item col-md-2 col-sm-6">
+            <a class="nav-link active" href="camasgatoscon.html">Camas</a>
+          </li>
+          <li class="nav-item col-md-2 col-sm-6">
+            <a class="nav-link active" href="comidagatoscon.html">Comida para gatos</a>
+          </li>
+          <li class="nav-item col-md-2 col-sm-6">
+            <a class="nav-link active" href="accesoriosgatoscon.html">accesorios</a>
+          </li>
+       </ul>
+
+       <br>
+       <br>
+
+      <br>
+      <br>
+
+
+    <div class="container mt-100">
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                        <div class="inner">
+                            <div class="main-img"><img
+                                    src="https://www.gatostienda.es/pics/2021/02/09/jinlaili-20pcs-campanas-de-colores-cascabeles-para-collar-de-gato-campanas-de-mascotas-para-gatos-y-perros-cascabeles-decorativos-para-el-hogar-cam-32445.jpg"
+                                    alt="Category" width="200"></div>
+                            <div class="thumblist"><img
+                                    src="https://m.media-amazon.com/images/I/818PV7hO3WS._AC_UX385_.jpg"
+                                    alt="Category" width="100"><img
+                                    src="https://images-na.ssl-images-amazon.com/images/I/71b3-k3OMzS._AC_UL330_SR330,330_.jpg"
+                                    alt="Category" width="100"></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Variedad Cascabeles Para Gatos</h4>
+                        <p class="text-muted">Precios desde $1.990</p><a class="btn btn-outline-primary btn-sm" href="#"
+                            data-abc="true">Ver Productos</a>
+                            <br>  
+                            <br>
+                            <a class="nav-link text-white" href="#"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                        <div class="inner">
+                            <div class="main-img"><img
+                                    src="https://m.media-amazon.com/images/I/81-mR8W6RqS._AC_SX466_.jpg"
+                                    alt="Category" width="144"></div>
+                            <div class="thumblist"><img
+                                    src="https://image.dhgate.com/0x0s/f2-albu-g16-M00-08-A7-rBVa4F_5FHiADgNaAAFttjPx-pU373.jpg/perro-gato-bandana-collar-plaid-accesorios.jpg"
+                                    alt="Category" width="150"><img
+                                    src="https://cf.shopee.cl/file/605e30633628de0942d20f79ea4f870d"
+                                    alt="Category" width="150"></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Variedad Bandanas Para Gatitos</h4>
+                        <p class="text-muted">Precios desde $3.990</p><a class="btn btn-outline-primary btn-sm" href="#"
+                            data-abc="true">Ver Productos</a>
+                            <br>  
+                            <br>
+                            <a class="nav-link text-white" href="#"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            
+
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                        <div class="inner">
+                            <div class="main-img"><img
+                                    src="https://m.media-amazon.com/images/I/71uhmUabWRS._AC_SX466_.jpg"
+                                    alt="Category" width="149"></div>
+                            <div class="thumblist"><img
+                                    src="https://jumbo.vteximg.com.br/arquivos/ids/321980/Arena-para-gato-Traper-4-kg-1-26321765.jpg?v=637136046954300000"
+                                    alt="Category" width="100"><img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_908377-MLC31895517002_082019-O.jpg" alt="Category"
+                                    width="100"></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Variedad Arena Para Gatos</h4>
+                        <p class="text-muted">Precios desde $12.990</p><a class="btn btn-outline-primary btn-sm" href="#"
+                            data-abc="true">Ver Productos</a>
+                            <br>  
+                            <br>
+                            <a class="nav-link text-white" href="#"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <br>
+
+    
+
+
+
+    <div class="container mt-100">
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                        <div class="inner">
+                            <div class="main-img"><img
+                                    src="https://jumbo.vteximg.com.br/arquivos/ids/459625/Alimento-humedo-gato-sensaciones-de-atun-en-salsa-85-g.jpg?v=637710316153030000"
+                                    alt="Category" width="230"></div>
+                            <div class="thumblist"><img
+                                    src="https://dojiw2m9tvv09.cloudfront.net/11787/product/equilibrio-gatos-castrados-hairball9214.jpg"
+                                    alt="Category" width="100"><img
+                                    src="https://jumbo.vteximg.com.br/arquivos/ids/338717/Principal-1970.jpg?v=637254236983500000"
+                                    alt="Category" width="100"></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Variedad Comida Para Gatos</h4>
+                        <p class="text-muted">Precios desde $3.999</p><a class="btn btn-outline-primary btn-sm" href="#"
+                            data-abc="true">Ver Productos</a>
+                            <br>  
+                            <br>
+                            <a class="nav-link text-white" href="#"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                        <div class="inner">
+                            <div class="main-img"><img
+                                    src="https://www.amigales.cl/pub/media/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/t/r/trixie_arnes_a.jpg"
+                                    alt="Category" width="226"></div>
+                            <div class="thumblist"><img
+                                    src="https://cf.shopee.cl/file/425a5ee8f8c69383d6dfb080b65baebe"
+                                    alt="Category" width="120"><img
+                                    src="https://dojiw2m9tvv09.cloudfront.net/11787/product/pawisearnescontrailla116008.jpg"
+                                    alt="Category" width="110"></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Variedad Arnes Para Gatos</h4>
+                        <p class="text-muted">Precios desde $5.990</p><a class="btn btn-outline-primary btn-sm" href="#"
+                            data-abc="true">Ver Productos</a>
+                            <br>  
+                            <br>
+                            <a class="nav-link text-white" href="#"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                        <div class="inner">
+                            <div class="main-img"><img
+                                    src="https://lh6.googleusercontent.com/8O9h0T2i8FezxFSvk8MaG5SsQtypz42dIZeVNVDag6BkPqEKFMw_ezuI-q0-AC_Z7no6dwNznUIeQ3K_OsP30IuVm0Bsk-N2RzOz44FQyXbR6ExYsn5O1_F5_Dju4bUtxl3rNHP2"
+                                    alt="Category" width="193"></div>
+                            <div class="thumblist"><img
+                                    src="https://felinus.cl/42-large_default/sinpuldry-antipulgas-en-polvo-para-gatos.jpg"
+                                    alt="Category" width="140"><img
+                                    src="https://ripleycl.imgix.net/https%3A%2F%2Fs3.amazonaws.com%2Fimagenes-sellers-mercado-ripley%2F2022%2F01%2F29132854%2Fcollar-eco_1.jpg?w=750&h=555&ch=Width&auto=format&cs=strip&bg=FFFFFF&q=60&trimcolor=FFFFFF&trim=color&fit=fillmax&ixlib=js-1.1.0&s=f89cf7e123e308f34f739492f370fccc" alt="Category"
+                                    width="140"></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Variedad Anti Pulgas Para Gatos</h4>
+                        <p class="text-muted">Precios desde $10.990</p><a class="btn btn-outline-primary btn-sm" href="#"
+                            data-abc="true">Ver Productos</a>
+                            <br>  
+                            <br>
+                            <a class="nav-link text-white" href="#"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    {% endblock %}
+
+
+
+
+    <!-- Center-aligned -->
+    <ul class="pagination justify-content-center" style="margin:20px 0">
+        <li class="page-item"><a class="page-link" href="gatos2con.html">Siguiente</a></li>
+        <li class="page-item"><a class="page-link" href="gatos2con.html">2</a></li>
+        
+    </ul>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-info text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/petshop.cl"
+                    role="button"><i class="fab fa-facebook-f"></i></a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-twitter"></i></a>
+
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-google"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1"
+                    href="https://www.instagram.com/fundacionanimalia/?hl=es" role="button"><i
+                        class="fab fa-instagram"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1"
+                    href="https://www.linkedin.com/in/jose-agurto-8165aa223/" role="button"><i
+                        class="fab fa-linkedin-in"></i></a>
+
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1"
+                    href="https://github.com/Bryan747474/Caso/settings/access?guidance_task=" role="button"><i
+                        class="fab fa-github"></i></a>
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Section: Form -->
+            <section class="">
+                <form action="">
+                    <!--Grid row-->
+                    <div class="row d-flex justify-content-center">
+                        <!--Grid column-->
+                        <div class="col-auto">
+                            <p class="pt-2">
+                                <strong>Subscribirse a nuestro boletin</strong>
+                            </p>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-5 col-12">
+                            <!-- Email input -->
+                            <div class="form-outline form-white mb-4">
+                                <input type="email" id="form5Example21" class="form-control" />
+                                <label class="form-label" for="form5Example21">Correo</label>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-auto">
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-outline-light mb-4">
+                                Subscribirse
+                            </button>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </form>
+            </section>
+            <!-- Section: Form -->
+
+            <!-- Section: Text -->
+            <section class="mb-4">
+                <p>
+                    Pagina Web dedicada exclusivamente a la adopcion y la adquicision de animales domesticos y exoticos
+                    asi como tambien alimentos para estos.
+                </p>
+            </section>
+            <!-- Section: Text -->
+
+
+        </div>
+
+
+
+        <div class="text-center p-3" style="background-color: rgb(167, 98, 54);">
+            © 2022 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">Pet Shop.com</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+{% extends 'app/base2.html' %}
+{% load static %}
+{% block contenido %}
+
+
+<div class="jumbotronhis">
+    <h1>Historial de compras</h1>
+    <p>Aqui veras tu historial de pedidos</p>
+</div>
+
+
+<br>
+<br>
+
+
+
+
+
+
+<div class="container mt-5">
+<div class="d-flex justify-content-center row">
+    <div class="col-md-10">
+        <div class="rounded">
+            <div class="table-responsive table-borderless">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th>Numero de orden #</th>
+                            <th>Producto</th>
+                            <th>Estado</th>
+                            <th>Total</th>
+                            <th>Fecha pedido</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr class="cell-1">
+                            <td class="text-center">1</td>
+                            <td>#13487</td>
+                            <td>Correa de perro</td>
+                            <td><span class="badge badge-success">Completo</span></td>
+                            <td>$2.500</td>
+                            <td>02/01/2022</td>
+                            <td><i class="fa fa-ellipsis-h text-black-50"></i></td>
+                        </tr>
+                        <tr class="cell-1">
+                            <td class="text-center">2</td>
+                            <td>#S13453</td>
+                            <td>Comida de gato</td>
+                            <td><span class="badge badge-success">Completo</span></td>
+                            <td>$1.990</td>
+                            <td>22/12/2021</td>
+                            <td><i class="fa fa-ellipsis-h text-black-50"></i></td>
+                        </tr>
+                        <tr class="cell-1">
+                            <td class="text-center">3</td>
+                            <td>#13498</td>
+                            <td>Bandana de conejo</td>
+                            <td><span class="badge badge-success">Completo</span></td>
+                            <td>$2.490</td>
+                            <td>20/10/2020</td>
+                            <td><i class="fa fa-ellipsis-h text-black-50"></i></td>
+                        </tr>
+                        <tr class="cell-1">
+                            <td class="text-center">4</td>
+                            <td>#S16499</td>
+                            <td>Comida de perro 20kg</td>
+                            <td><span class="badge badge-warning">Proceso de reembolso</span></td>
+                            <td>$19.990</td>
+                            <td>15/09/2020</td>
+                            <td><i class="fa fa-ellipsis-h text-black-50"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+<br>
+
+
+
+{% endblock %}
+

@@ -1,0 +1,370 @@
+<!-- BASE SIN REGISTRO -->
+
+{% extends 'app/base.html' %}
+{% load static %}
+{% block contenido %}
+
+
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1>Bienvenidos a Petshop <br>
+            Productos Recomendados
+        </h1>
+        <p></p>
+    </div>
+</div>
+
+
+
+<div class="container mt-100">
+    <div class="row">
+        {% for aux in listaProductos %} 
+        <div class="col-md-4 col-sm-6">
+            <div class="card mb-30 mt-5 "><a class="card-img-tiles" href="#" data-abc="true">
+                    <div class="inner"> 
+                    {% if aux.imagen %}
+                        <img src="{{ aux.imagen.url }}"  class="mx-auto d-block" width="200">
+                    {% else %}
+                    <div class="main-img mx-auto d-block"><img
+                                src="https://http2.mlstatic.com/medalla-chapita-llavero-mascotas-perros-gatos-foto-souvenirs-D_NQ_NP_845227-MLA28239414256_092018-F.jpg"
+                                alt="Category" width="200"></div>
+                    {% endif %}
+
+                        
+                        
+                    </div>
+                </a>
+                <div class="card-body text-center">
+                    <h4 class="card-title">{{ aux.nombre }}</h4>
+                    
+                    <dl class="text-center">
+                        <dt>Precio</dt>
+                        <dd class="font-italic">- {{ aux.precio }}</dd>
+                        <dt>Marca</dt>
+                        <dd class="font-italic">- {{ aux.marca }}</dd>
+                        <dt>Tipo de producto</dt>
+                        <dd class="font-italic">- {{ aux.tipo }}</dd>
+                    </dl> 
+
+
+
+
+
+
+                    <br>
+                    <br>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<br>
+
+
+
+
+
+
+
+
+
+<div class="jumbotron1 jumbotron-fluid  ">
+    <div class="container">
+        <h1></h1>
+        <p></p>
+    </div>
+</div>
+
+
+
+<div class="container mt-100">
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                    <div class="inner">
+                        <div class="container d-flex justify-content-center align-items-center">
+                            <div class="card"> <span class="percent"></span>
+                                <div class="card-image"> <img
+                                        src="https://garden-fr.desigusxpro.com/wp-content/uploads/2020/04/karlikovaja_babochka.jpg"
+                                        width="300"> </div>
+                                <div class="card-inner"> <span></span>
+
+                                    <div class="price"> <span></span> <sup></sup> </div>
+                                    <div class="mt-3 d-flex justify-content-between align-items-center">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="card-body text-center">
+                    <h4 class="card-title">Conejito Mariposa</h4>
+                    <p class="text-muted">Me llamo Canelita tengo 5 meses, busco un dueño que me ame y cuide</p><a
+                        class="btn btn-outline-primary btn-sm" href="#" data-abc="true">Adoptar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                    <div class="inner">
+                        <div class="container d-flex justify-content-center align-items-center">
+                            <div class="card"> <span class="percent"></span>
+                                <div class="card-image"> <img
+                                        src="https://soyfotografodeperros.com/wp-content/uploads/2019/10/Cachorros-1.jpg"
+                                        width="267"> </div>
+                                <div class="card-inner"> <span></span>
+
+                                    <div class="price"> <span></span> <sup></sup> </div>
+                                    <div class="mt-3 d-flex justify-content-between align-items-center">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="card-body text-center">
+                    <h4 class="card-title">Perrito Amoroso</h4>
+                    <p class="text-muted">Me llamo Tambi tengo 2 meses, soy muy jugueton quiero que me hagan arto cariño
+                        y me den mucha comida</p><a class="btn btn-outline-primary btn-sm" href="#"
+                        data-abc="true">Adoptar</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-4 col-sm-6">
+            <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                    <div class="inner">
+                        <div class="container d-flex justify-content-center align-items-center">
+                            <div class="card"> <span class="percent"></span>
+                                <div class="card-image"> <img
+                                        src="https://cdn.pixabay.com/photo/2021/04/23/12/54/cat-6201643_960_720.jpg"
+                                        width="318"> </div>
+                                <div class="card-inner"> <span></span>
+                                    <div class="price"> <span></span> <sup></sup> </div>
+                                    <div class="mt-3 d-flex justify-content-between align-items-center">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </a>
+                <div class="card-body text-center">
+                    <h4 class="card-title">Gatito Tierno</h4>
+                    <p class="text-muted">Me llamo Pelusa tengo 3 años soy muy regalona y traviesa busco un dueño que me
+                        de mucho amor</p><a class="btn btn-outline-primary btn-sm" href="#" data-abc="true">Adoptar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<div class="container mt-100">
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                    <div class="inner">
+                        <div class="container d-flex justify-content-center align-items-center">
+                            <div class="card"> <span class="percent"></span>
+                                <div class="card-image"> <img
+                                        src="https://estaticos.muyinteresante.es/uploads/images/article/5b6d6f495bafe8b4bf12d6c7/loro-verde-en-jaula.jpg"
+                                        width="300"> </div>
+                                <div class="card-inner"> <span></span>
+
+                                    <div class="price"> <span></span> <sup></sup> </div>
+                                    <div class="mt-3 d-flex justify-content-between align-items-center">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="card-body text-center">
+                    <h4 class="card-title">Loro Argentino</h4>
+                    <p class="text-muted">Me llamo Matias tengo 2 años soy un lorito muy simpatico, me encanta llamar la
+                        atención</p><a class="btn btn-outline-primary btn-sm" href="#" data-abc="true">Adoptar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                    <div class="inner">
+                        <div class="container d-flex justify-content-center align-items-center">
+                            <div class="card"> <span class="percent"></span>
+                                <div class="card-image"> <img
+                                        src="https://openrevista.com/wp-content/uploads/2019/12/perrito-callejero-703x450.jpg"
+                                        width="352"> </div>
+                                <div class="card-inner"> <span></span>
+
+                                    <div class="price"> <span></span> <sup></sup> </div>
+                                    <div class="mt-3 d-flex justify-content-between align-items-center">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="card-body text-center">
+                    <h4 class="card-title">Perrito Amigable</h4>
+                    <p class="text-muted">Me llamo sultan tengo 6 meses, soy muy buen compañero y nunca te abandonare si
+                        me cuidas</p><a class="btn btn-outline-primary btn-sm" href="#" data-abc="true">Adoptar</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-4 col-sm-6 mb-10">
+            <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                    <div class="inner">
+                        <div class="container d-flex justify-content-center align-items-center">
+                            <div class="card"> <span class="percent"></span>
+                                <div class="card-image"> <img
+                                        src="https://t1.ea.ltmcdn.com/es/posts/4/9/5/curiosidades_sobre_los_erizos_de_tierra_23594_orig.jpg"
+                                        width="340"> </div>
+                                <div class="card-inner"> <span></span>
+                                    <div class="price"> <span></span> <sup></sup> </div>
+                                    <div class="mt-3 d-flex justify-content-between align-items-center">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </a>
+                <div class="card-body text-center">
+                    <h4 class="card-title">Erizo De Tierra</h4>
+                    <p class="text-muted">Me llamo Espinita tengo 3 años, soy muy tierno y me encanta que me acaricien
+                        la barriga</p><a class="btn btn-outline-primary btn-sm" href="#" data-abc="true">Adoptar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="bg-info text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+            <!-- Facebook -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/petshop.cl"
+                role="button"><i class="fab fa-facebook-f"></i></a>
+
+            <!-- Twitter -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+            <!-- Google -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+
+            <!-- Instagram -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/fundacionanimalia/?hl=es"
+                role="button"><i class="fab fa-instagram"></i></a>
+
+            <!-- Linkedin -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/jose-agurto-8165aa223/"
+                role="button"><i class="fab fa-linkedin-in"></i></a>
+
+            <!-- Github -->
+            <a class="btn btn-outline-light btn-floating m-1"
+                href="https://github.com/Bryan747474/Caso/settings/access?guidance_task=" role="button"><i
+                    class="fab fa-github"></i></a>
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Form -->
+        <section class="">
+            <form action="">
+                <!--Grid row-->
+                <div class="row d-flex justify-content-center">
+                    <!--Grid column-->
+                    <div class="col-auto">
+                        <p class="pt-2">
+                            <strong>Subscribirse a nuestro boletin</strong>
+                        </p>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-5 col-12">
+                        <!-- Email input -->
+                        <div class="form-outline form-white mb-4">
+                            <input type="email" id="form5Example21" class="form-control" />
+                            <label class="form-label" for="form5Example21">Correo</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-auto">
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-outline-light mb-4">
+                            Subscribirse
+                        </button>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </form>
+        </section>
+        <!-- Section: Form -->
+
+        <!-- Section: Text -->
+        <section class="mb-4">
+            <p>
+                Pagina Web dedicada exclusivamente a realizar el aporte a la fundacion sin fines de lucro, la adopción y
+                la adquicisión de animales domesticos y exoticos
+                asi como tambien alimentos y accesorios para estos.
+            </p>
+        </section>
+        <!-- Section: Text -->
+
+
+    </div>
+
+
+
+    <div class="text-center p-3" style="background-color: rgb(167, 98, 54);">
+        © 2022 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">Pet Shop.com</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+</body>
+
+</html>

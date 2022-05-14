@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perros</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-success navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="sinregistro.html"><img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-256.png"
+                    width="130" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="perro1con.html"><i class="fa-solid fa-dog"></i> Perros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="gatos1con.html"><i class="fa-solid fa-cat"></i> Gatos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="exotico1con.html"><i class="fa-solid fa-frog"></i> Exoticos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="fundacion.html"><i class="fa-solid fa-house-chimney-medical"></i> Nuestra
+                        Fundación</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="segui.html"><i class="fa-solid fa-truck"></i> Seguimiento</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link text-white btn btn-success" data-toggle="modal" data-target="#myModal" href=""><i
+                            class="fa-solid fa-comment"></i> Chat</a>
+                </li>
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="vercarro.html"><i class="fa-solid fa-cart-shopping"></i> Ver Carrito</a>
+                
+
+
+                    
+                    <!-- Button to Open the Modal -->
+
+
+                    <!-- The Modal -->
+                    <div class="modal" id="myModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">PetShop</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <div class="page-content page-container" id="page-content">
+                                        <div class="padding">
+                                            <div class="row container d-flex justify-content-center">
+                                                <div class="col-md-15">
+                                                    <div class="card card-bordered">
+                                                        <div class="card-header">
+                                                            <h4 class="card-title"><strong>Chat</strong></h4> <a
+                                                                class="btn btn-xs btn-secondary" href="#"
+                                                                data-abc="true">Conversa con nosotros</a>
+                                                        </div>
+                                                        <div class="ps-container ps-theme-default ps-active-y"
+                                                            id="chat-content"
+                                                            style="overflow-y: scroll !important; height:400px !important;">
+                                                            <div class="media media-chat"> <img class="avatar"
+                                                                    src="https://img.icons8.com/color/36/000000/administrator-male.png"
+                                                                    alt="...">
+                                                                <div class="media-body">
+                                                                    <p>Hola!</p>
+                                                                    <p>Como estas???</p>
+                                                                    <p>Me Encantaria poder ayudarte!<br> Que estas
+                                                                        buscando???</p>
+                                                                    <p class="meta"><time datetime="2018">13:51</time>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="publisher bt-1 border-light"> <img
+                                                                class="avatar avatar-xs"
+                                                                src="https://img.icons8.com/color/36/000000/administrator-male.png"
+                                                                alt="..."> <input class="publisher-input" type="text"
+                                                                placeholder="Escribe Aqui...!"> <span
+                                                                class="publisher-btn file-group"> <i
+                                                                    class="fa fa-paperclip file-browser"></i> <input
+                                                                    type="file"> </span> <a class="publisher-btn"
+                                                                href="#" data-abc="true"><i class="fa fa-smile"></i></a>
+                                                            <a class="publisher-btn text-info" href="#"
+                                                                data-abc="true"><i class="fa fa-paper-plane"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+
+
+
+
+
+
+
+
+
+
+            </ul>
+
+
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    
+
+                    <li class="nav-item">
+                        
+                        <a class="nav-link text-white" href="index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesion</a>
+
+                    </li>
+
+                </ul>
+            </div>
+
+            
+
+
+        </div>
+    </nav>
+
+
+
+
+
+    <div class="jumbotron5  p-5 bg-danger text-white rounded">
+        <h1>Seccion Perritos</h1>
+        <p>Aqui  podras encontrar productos y accesorios</p>
+      </div>
+
+
+
+      <br>
+      <br>
+
+
+      <ul class="nav nav-pills">
+        <li class="nav-item col-md-2 col-sm-1">
+          <a class="nav-link active" href="collarperroscon.html">Medallas</a>
+        </li>
+        <li class="nav-item col-md-2 col-sm-6">
+            <a class="nav-link active" href="correaperroscon.html">Correas</a>
+          </li>
+          <li class="nav-item col-md-2 col-sm-6">
+            <a class="nav-link active" href="bandanaperroscon.html">Bandanas</a>
+          </li>
+          <li class="nav-item col-md-2 col-sm-6">
+            <a class="nav-link active" href="camasperroscon.html">Camas</a>
+          </li>
+          <li class="nav-item col-md-2 col-sm-6">
+            <a class="nav-link active" href="comidaperroscon.html">Comida Para Perro</a>
+          </li>
+          <li class="nav-item col-md-2 col-sm-6">
+            <a class="nav-link active" href="accesoriosperroscon.html">accesorios</a>
+          </li>
+       </ul>
+
+       <br>
+       <br>
+
+       <div class="container mt-100">
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                        <div class="inner">
+                            <div class="main-img"><img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_769614-MLA32289511073_092019-O.jpg"
+                                    alt="Category" width="141"></div>
+                            <div class="thumblist"><img
+                                    src="https://razasdegato.net/wp-content/uploads/2020/03/placa-identificacion-gatos.jpg"
+                                    alt="Category" width="100"><img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_742536-MLA31008586612_062019-O.jpg"
+                                    alt="Category" width="100"></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Medalla para perrito forma de patita</h4>
+                        <p class="text-muted">Precio $2.990</p><a class="btn btn-outline-primary btn-sm" href="#"
+                            data-abc="true">Ver Productos</a>
+                            <br>  
+                            <br>
+                            <a class="nav-link text-white" href="#"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                        <div class="inner">
+                            <div class="main-img"><img
+                                    src="https://avertia.es/wp-content/uploads/41kxNQPQQdL.jpg"
+                                    alt="Category" width="210"></div>
+                            <div class="thumblist"><img
+                                    src="https://img.clasf.pe/2018/12/25/Medalla-Para-Perro-Con-Nombre-Y-Datos-En-Acero-Inoxidable-20181225150502.1306310015.jpg"
+                                    alt="Category" width="100"><img
+                                    src="https://m.media-amazon.com/images/I/41CRcu0v7RL._SL500_.jpg"
+                                    alt="Category" width="100"></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Medalla para perrito forma de huesito</h4>
+                        <p class="text-muted">Precio $2.990</p><a class="btn btn-outline-primary btn-sm" href="#"
+                            data-abc="true">Ver Productos</a>
+                            <br>  
+                            <br>
+                            <a class="nav-link text-white" href="#"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            
+
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                        <div class="inner">
+                            <div class="main-img"><img
+                                    src="https://www.compraenhuesca.com/wp-content/uploads/2020/06/chapas-para-perros-personalizadas-3.jpg"
+                                    alt="Category" width="183"></div>
+                            <div class="thumblist"><img
+                                    src="https://m.media-amazon.com/images/I/31tshjtV8SL._SL500_.jpg"
+                                    alt="Category" width="100"><img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_923669-MLM46938573272_082021-V.jpg" alt="Category"
+                                    width="100"></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Medalla para perrito forma de perrito</h4>
+                        <p class="text-muted">Precio $5.990</p><a class="btn btn-outline-primary btn-sm" href="#"
+                            data-abc="true">Ver Productos</a>
+                            <br>  
+                            <br>
+                            <a class="nav-link text-white" href="#"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+   <br>
+
+
+    
+
+
+
+    <div class="container mt-100">
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                        <div class="inner">
+                            <div class="main-img"><img
+                                    src="https://mjavhov.com/placas%20para%20perros/mh110_cl_front.png"
+                                    alt="Category" width="152"></div>
+                            <div class="thumblist"><img
+                                    src="https://mjavhov.com/images/pet_tag_promo/mh203_cl_30wm.jpg"
+                                    alt="Category" width="100"><img
+                                    src="https://mjavhov.com/images/pet_tag_promo/mh205_cl_30wm.jpg"
+                                    alt="Category" width="100"></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Medalla para perrito forma de perrito a color</h4>
+                        <p class="text-muted">Precio $7.990</p><a class="btn btn-outline-primary btn-sm" href="#"
+                            data-abc="true">Ver Productos</a>
+                            <br>  
+                            <br>
+                            <a class="nav-link text-white" href="#"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                        <div class="inner">
+                            <div class="main-img"><img
+                                    src="https://m.media-amazon.com/images/I/71zf3JiSjZL._AC_SX466_.jpg"
+                                    alt="Category" width="175"></div>
+                            <div class="thumblist"><img
+                                    src="https://ae01.alicdn.com/kf/HTB1sfu0Hv1TBuNjy0Fjq6yjyXXa6/Etiqueta-de-identificaci-n-personalizada-para-perro-y-gato-placa-de-goma-deslizante-de-acero-inoxidable.jpg_Q90.jpg_.webp"
+                                    alt="Category" width="100"><img
+                                    src="https://www.perrostienda.es/pics/2022/02/21/petaccom-placas-de-identificacion-para-perros-acero-inoxidable-chapa-identificativa-silenciosa-etiquetas-identificacion-mascotas-para-collares-de-p-114779.jpg"
+                                    alt="Category" width="150"></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Medalla silenciosa para perros</h4>
+                        <p class="text-muted">Precio $10.990</p><a class="btn btn-outline-primary btn-sm" href="#"
+                            data-abc="true">Ver Productos</a>
+                            <br>  
+                            <br>
+                            <a class="nav-link text-white" href="#"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                        <div class="inner">
+                            <div class="main-img"><img
+                                    src="https://i.pinimg.com/736x/51/d5/45/51d545b293f82e4adbb6b679a5648043.jpg"
+                                    alt="Category" width="224"></div>
+                            <div class="thumblist"><img
+                                    src="https://i.pinimg.com/236x/57/73/53/5773537f966538b73999fec549ee08e7.jpg"
+                                    alt="Category" width="100"><img
+                                    src="https://i.pinimg.com/originals/f8/8a/8a/f88a8a5182c75fbc356796625dee8927.jpg" alt="Category"
+                                    width="108"></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Medalla para perros de madera</h4>
+                        <p class="text-muted">Precio $8.990</p><a class="btn btn-outline-primary btn-sm" href="#"
+                            data-abc="true">Ver Productos</a>
+                            <br>  
+                            <br>
+                            <a class="nav-link text-white" href="#"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<br>
+    
+    <!-- Footer -->
+    <footer class="bg-info text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/petshop.cl"
+                    role="button"><i class="fab fa-facebook-f"></i></a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-twitter"></i></a>
+
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-google"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1"
+                    href="https://www.instagram.com/fundacionanimalia/?hl=es" role="button"><i
+                        class="fab fa-instagram"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1"
+                    href="https://www.linkedin.com/in/jose-agurto-8165aa223/" role="button"><i
+                        class="fab fa-linkedin-in"></i></a>
+
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1"
+                    href="https://github.com/Bryan747474/Caso/settings/access?guidance_task=" role="button"><i
+                        class="fab fa-github"></i></a>
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Section: Form -->
+            <section class="">
+                <form action="">
+                    <!--Grid row-->
+                    <div class="row d-flex justify-content-center">
+                        <!--Grid column-->
+                        <div class="col-auto">
+                            <p class="pt-2">
+                                <strong>Subscribirse a nuestro boletin</strong>
+                            </p>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-5 col-12">
+                            <!-- Email input -->
+                            <div class="form-outline form-white mb-4">
+                                <input type="email" id="form5Example21" class="form-control" />
+                                <label class="form-label" for="form5Example21">Correo</label>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-auto">
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-outline-light mb-4">
+                                Subscribirse
+                            </button>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </form>
+            </section>
+            <!-- Section: Form -->
+
+            <!-- Section: Text -->
+            <section class="mb-4">
+                <p>
+                    Pagina Web dedicada exclusivamente a la adopcion y la adquicision de animales domesticos y exoticos
+                    asi como tambien alimentos para estos.
+                </p>
+            </section>
+            <!-- Section: Text -->
+
+
+        </div>
+
+
+
+        <div class="text-center p-3" style="background-color: rgb(167, 98, 54);">
+            © 2022 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">Pet Shop.com</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+</body>
+
+</html>

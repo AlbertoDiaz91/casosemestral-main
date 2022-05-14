@@ -1,0 +1,22 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block contenido %}
+
+<form action="" method="POST" enctype="multipart/form-data" >
+    {% csrf_token %}
+
+<table>
+    
+    {{ form|crispy }}
+
+</table>
+    <input type="submit" class="btn btn-success" value="guardar">
+</form>
+
+{{ mensaje }}
+
+
+
+
+{% endblock %}
