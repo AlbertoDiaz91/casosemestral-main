@@ -126,6 +126,24 @@ class Pedido(models.Model):
     # admin ---- admin1
 
 
+class Productos_Carro(models.Model):
+    nombre_producto = models.CharField(max_length=20)
+    precio_producto = models.IntegerField()
+    imagen_producto = models.ImageField(upload_to="productos_carro", null=True)
+
+    def __str__(self):
+        return self.nombre_producto
+
+    class Meta:
+        db_table = 'db_productos_carro'
+
+class Carro (models.Model):
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'db_carro'
+
+
 
 
 

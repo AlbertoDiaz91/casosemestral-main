@@ -17,6 +17,8 @@ def index(request):
     }
     return render(request,'app/index.html',datos)
 
+    
+
 
 def listar_clientes(request):
     clientesAll = Cliente.objects.all()
@@ -40,7 +42,21 @@ def exotico1 (request):
 
 
 def sinregistro (request):
-    return render(request, 'app/sinregistro.html')
+    productosAll = Producto.objects.all()
+    datos = {'listaProductos': productosAll }
+        
+    
+    if request.method == 'POST':
+        carro = Productos_Carro()
+        carro.nombre_producto = request.POST.get('nombre_producto')
+        carro.precio_producto = request.POST.get('precio_producto')
+        carro.imagen_producto = request.POST.get('imagen_producto')
+        carro.save()
+        
+        
+
+
+    return render(request,'app/sinregistro.html',datos)
 
 def perro1con (request):
     return render(request, 'app/perro1con.html')
