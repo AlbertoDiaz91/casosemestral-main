@@ -54,7 +54,7 @@ function confirmDeletecli(run){
 
 function confirmRegister(){
 Swal.fire({
-    position: 'top-end',
+    position: 'center-start',
     icon: 'success',
     title: 'Registrado',
     showConfirmButton: false,

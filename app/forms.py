@@ -16,6 +16,7 @@ class ProductoForm(ModelForm):
         widgets = {
             'fecha_ingreso' : forms.SelectDateWidget(years=range(2020,2023))
         }
+        
 
 
 class ClienteForm(ModelForm):
