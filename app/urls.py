@@ -8,6 +8,7 @@ urlpatterns = [
     path('exotico1/', exotico1 ,name="exotico"),
     path('sinregistro/', sinregistro ,name="sinregistro"),
     
+    
 
 
 
@@ -29,6 +30,7 @@ urlpatterns = [
     path('listar_cliente/', listar_cliente ,name="listar_cliente"),
     path('modificar_cliente/<run>/', modificar_cliente ,name="modificar_cliente"),
     path('eliminar_cliente/<run>/', eliminar_cliente ,name="eliminar_cliente"),
+    
 
 
 ]

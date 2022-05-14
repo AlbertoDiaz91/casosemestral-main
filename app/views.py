@@ -65,6 +65,8 @@ def vercarro (request):
 
 
 
+
+
 def agregar_producto (request):
     datos = {
         'form' : ProductoForm()

@@ -1,8 +1,25 @@
-{% extends 'app/base.html' %}
+{% extends 'app/modelocliente.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
 {% block contenido %}
 
+
+<br>
+<br>
+<br>
+<div class="container pt3, text-center, bg-info">
+
+
+    <div class="container text-center  font-weight-bold">
+        <br>
+        <h1>Agregar Cliente</h1>
+        <p >Aqui podras agregar clientes tanto suscritos como no suscritos.</p>
+        <br>
+        <img src="data:image/png;base64,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" class="rounded-circle" alt="Cinque Terre">
+
+      </div>
+
+            
 <form action="" method="POST" enctype="multipart/form-data" >
     {% csrf_token %}
 
@@ -11,8 +28,22 @@
     {{ form|crispy }}
 
 </table>
+    <br>
     <input type="submit" class="btn btn-success" value="guardar">
 </form>
+
+</div>
+
+<br>
+<br>
+
+
+
+
+
+
+
+
 
 {{ mensaje }}
 
