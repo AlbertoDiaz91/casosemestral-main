@@ -21,6 +21,7 @@ class ProductoForm(ModelForm):
 class ClienteForm(ModelForm):
 
     nombre = forms.CharField(min_length=5,max_length=20)
+    run = forms.CharField(min_length=9,max_length=9)
 
     class Meta:
         model = Cliente

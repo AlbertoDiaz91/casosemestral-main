@@ -52,17 +52,6 @@ function confirmDeletecli(run){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 function confirmRegister(){
 Swal.fire({
     position: 'top-end',
@@ -71,7 +60,7 @@ Swal.fire({
     showConfirmButton: false,
     timer: 1500
   }).then(function () {
-    window.location.href = "agregar_cliente/" + codigo + "/";
+    window.location.href = "sinregistro.html";
 })
 
 }
