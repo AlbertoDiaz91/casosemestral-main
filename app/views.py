@@ -77,7 +77,10 @@ def segui (request):
     return render(request, 'app/segui.html')
 
 def vercarro (request):
-    return render(request, 'app/vercarro.html')
+    carro = Productos_Carro.objects.all()
+    datos = {'listaCarrito': carro }
+
+    return render(request, 'app/vercarro.html',datos)
 
 
 
