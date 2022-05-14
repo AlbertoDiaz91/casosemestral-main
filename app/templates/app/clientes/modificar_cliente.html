@@ -3,6 +3,23 @@
 {% load crispy_forms_tags %}
 {% block contenido %}
 
+<br>
+<br>
+<br>
+
+<div class="container pt3, text-center, bg-info">
+
+
+    <div class="container text-center  font-weight-bold">
+        <br>
+        <h1>Modificar Cliente</h1>
+        <p >Aqui podras modificar clientes.</p>
+        <br>
+        <img src="https://cdn.icon-icons.com/icons2/20/PNG/256/businessapplication_edit_male_user_thepencil_theclient_negocio_2321.png" class="rounded-circle" alt="Cinque Terre">
+
+      </div>
+
+
 <form action="" method="POST" enctype="multipart/form-data" >
     {% csrf_token %}
 
@@ -13,6 +30,10 @@
 </table>
     <input type="submit" class="btn btn-success" value="Modificar">
 </form>
+
+</div>
+<br>
+<br>
 
 {{ mensaje }}
 
