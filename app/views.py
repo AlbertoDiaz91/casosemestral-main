@@ -58,8 +58,13 @@ def sinregistro (request):
 
     return render(request,'app/sinregistro.html',datos)
 
-def perro1con (request):
-    return render(request, 'app/perro1con.html')
+def perro1con(request):
+    perroAll = Perro.objects.all()
+    datos = {
+        'listaPerros': perroAll
+    }
+    return render(request,'app/perro1con.html',datos)
+    
 
 def gatos1con (request):
     return render(request, 'app/gatos1con.html')
@@ -87,7 +92,7 @@ def vercarro (request):
 
 
 def vercarroeliminar (request, codigo_producto):
-    producto = Producto.objects.get(codigo_producto=codigo_producto)
+    producto = Productos_Carro.objects.get(codigo_producto=codigo_producto)
     producto.delete()
 
     return redirect(to="vercarro")

@@ -31,3 +31,19 @@ class ClienteForm(ModelForm):
         widgets = {
             'fecha_registro' : forms.SelectDateWidget(years=range(2020,2023))
         }
+
+
+
+
+class PerroForm(ModelForm):
+
+    nombre = forms.CharField(min_length=5,max_length=20)
+    codigo = forms.CharField(min_length=9,max_length=9)
+
+    class Meta:
+        model = Perro
+        fields = ['codigo','nombre','raza','imagen','fecha_nacimiento']
+
+        widgets = {
+            'fecha_nacimiento' : forms.SelectDateWidget(years=range(2020,2023))
+        }

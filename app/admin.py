@@ -27,6 +27,11 @@ class PedidoAdmin(admin.ModelAdmin):
     search_fields = ['numero']
     list_per_page = 3
 
+class PerroAdmin(admin.ModelAdmin):
+    list_display = ['codigo','nombre','raza','imagen','fecha_nacimiento']
+    search_fields = ['codigo']
+    list_per_page = 3
+
 
 
 
@@ -43,6 +48,10 @@ admin.site.register(TipoCliente)
 
 admin.site.register(Pedido,PedidoAdmin)
 admin.site.register(TipoPedido)
+
+
+admin.site.register(Perro,PerroAdmin)
+admin.site.register(TipoPerro)
 
 
 

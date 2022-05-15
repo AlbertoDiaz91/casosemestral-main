@@ -34,6 +34,19 @@ class TipoCliente(models.Model):
         db_table = 'db_tipo_cliente'
 
 
+
+class TipoPerro(models.Model):
+    raza = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.raza
+
+    class Meta:
+        db_table = 'db_tipo_perro'
+
+
+
+
 class TipoPedido(models.Model):
     tipo = models.CharField(max_length=20)
 
@@ -101,6 +114,26 @@ class Cliente(models.Model):
 
     class Meta:
         db_table = 'db_cliente'
+
+
+
+class Perro(models.Model):
+    codigo = models.CharField(null=False,primary_key=True,max_length=9)
+    nombre = models.CharField(max_length=20)
+    raza = models.ForeignKey(TipoPerro,on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to="perro", null=True)
+    fecha_nacimiento = models.DateField()
+
+    def _str_(self):
+        return self.nombre
+
+    class Meta:
+        db_table = 'db_perro'
+
+
+
+
+
 
 
 

@@ -68,7 +68,9 @@ function confirmDeletecarro(codigo_producto){
             'Deleted!',
             'Your file has been deleted.',
             'success'
-          )
+          ).then(function () {
+            window.location.href = "/vercarro/" + codigo_producto + "/";
+        })
         }
       })
     
@@ -76,7 +78,7 @@ function confirmDeletecarro(codigo_producto){
 
 
 
-// FUNCIONES SIN INICIO DE SESION
+// FUNCIONES SIN INICIO DE SESION (BOTONES DE INICIO Y REGISTRO)
 function inicioSecion(){
     Swal.fire({
         icon: 'success',
