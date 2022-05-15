@@ -91,9 +91,13 @@
                         <dd class="font-italic">- {{ aux.marca }}</dd>
                         <dt>Tipo de producto</dt>
                         <dd class="font-italic">- {{ aux.tipo }}</dd>
+                        <dt>Codigo de producto</dt>
+                        <dd class="font-italic">- {{ aux.codigo }}</dd>
 
                         <form action="" method="POST">
                             {% csrf_token %}
+                            
+                            <input type="hidden" name="codigo_producto" id="codigo_producto" value="{{ aux.codigo }}">
                             <input type="hidden" name="nombre_producto" id="nombre_producto" value="{{ aux.nombre }}">
                             <input type="hidden" name="precio_producto" id="precio_producto" value="{{ aux.precio }}">
                             <input type="hidden" name="imagen_producto" id="imagen_producto" value="{{ aux.imagen }}">

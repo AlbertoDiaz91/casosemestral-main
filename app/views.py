@@ -76,11 +76,23 @@ def historial (request):
 def segui (request):
     return render(request, 'app/segui.html')
 
+
+ # Funciones de vercarro
+
 def vercarro (request):
     carro = Productos_Carro.objects.all()
     datos = {'listaCarrito': carro }
 
     return render(request, 'app/vercarro.html',datos)
+
+
+def vercarroeliminar (request, codigo_producto):
+    producto = Producto.objects.get(codigo_producto=codigo_producto)
+    producto.delete()
+
+    return redirect(to="vercarro")
+
+
 
 
 

@@ -106,7 +106,7 @@
 
                         
 
-                                            {% for aux in listaCarrito %} 
+                                        {% for aux in listaCarrito %} 
                                             <div class="cart_items bg-white">
                                                 <ul class="cart_list">
                                                     <li class="cart_item clearfix bg-white">
@@ -128,26 +128,27 @@
                                                             <div class="cart_item_price cart_info_col">
                                                                 <div class="cart_item_title text-dark">Precio</div>
                                                                 <div class="cart_item_text text-dark">$ {{ aux.precio_producto }}</div>
-
-                                                                
-                                                            
-
-
                                                             </div>
+
+
+                                                            <div class="cart_item_price cart_info_col">
+                                                                <div class="cart_item_title text-dark">Codigo</div>
+                                                                <div class="cart_item_text text-dark"> {{ aux.codigo_producto }}</div>
+                                                            </div>
+
+
+
                                                             <div class="cart_item_total cart_info_col">
                                                                 <div class="cart_item_title text-dark">Total</div>
                                                                 <div class="cart_item_text text-dark">$2.500</div>
+                                                                <a onclick="confirmDeletecarro ({{ aux.codigo_producto }})" class="btn btn-danger">Eliminar</a> 
                                                             </div>
                                                         </div>
                                                     </li>
                                                 </ul>
                                             </div>
                                         
-
-
-
-                        
-                        {% endfor %}
+                                        {% endfor %}
                                 
                     
 

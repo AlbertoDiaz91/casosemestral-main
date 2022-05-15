@@ -19,7 +19,9 @@ urlpatterns = [
     path('fundacion/', fundacion ,name="fundacion"),
     path('historial/', historial ,name="historial"),
     path('segui/', segui ,name="segui"),
+
     path('vercarro/', vercarro ,name="vercarro"),
+    path('vercarroeliminar/<codigo>/', vercarroeliminar ,name="vercarroeliminar"),
 
     path('agregar_producto/', agregar_producto ,name="agregar_producto"),
     path('modificar_producto/<codigo>/', modificar_producto ,name="modificar_producto"),

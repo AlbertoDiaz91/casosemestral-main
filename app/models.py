@@ -127,9 +127,11 @@ class Pedido(models.Model):
 
 
 class Productos_Carro(models.Model):
+    codigo_producto = models.IntegerField(null=False,primary_key=True)
     nombre_producto = models.CharField(max_length=20)
     precio_producto = models.IntegerField()
     imagen_producto = models.ImageField(upload_to="productos_carro", null=True)
+    
 
     def __str__(self):
         return self.nombre_producto

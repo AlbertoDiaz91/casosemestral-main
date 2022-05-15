@@ -47,21 +47,55 @@ function confirmDeletecli(run){
         }
     })
     
-    }
-
-
-
-
-function confirmRegister(){
-Swal.fire({
-    position: 'center-start',
-    icon: 'success',
-    title: 'Registrado',
-    showConfirmButton: false,
-    timer: 1500
-  }).then(function () {
-    window.location.href = "sinregistro.html";
-})
-
 }
 
+
+
+// Borrar producto de carro
+
+function confirmDeletecarro(codigo_producto){
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+    
+}
+
+
+
+// FUNCIONES SIN INICIO DE SESION
+function inicioSecion(){
+    Swal.fire({
+        icon: 'success',
+        title: 'Seción iniciada correctamente',
+        text: 'Gracias por volver!'
+        
+    }).then(function () {
+            window.location.href = "/sinregistro/";
+    })
+}
+
+
+function inicioRegistro(){
+    Swal.fire({
+        icon: 'success',
+        title: 'Cuenta registrada correctamente',
+        //text: 'Gracias por volver!'
+        
+    }).then(function () {
+            window.location.href = "/sinregistro/";
+    })
+}
