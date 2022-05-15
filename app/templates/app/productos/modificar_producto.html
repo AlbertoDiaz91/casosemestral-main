@@ -3,6 +3,25 @@
 {% load crispy_forms_tags %}
 {% block contenido %}
 
+
+
+<br>
+<br>
+
+<div class="container pt3, text-center, bg-info">
+
+
+    <div class="container text-center  font-weight-bold">
+        <br>
+        <h1>Modificar Productos</h1>
+        <p >Aqui podras modificar Productos.</p>
+        <br>
+        <img src="https://www.pngkit.com/png/full/94-943587_este-grficos-es-editar-el-icono-sobre-editores.png" height="200">
+
+      </div>
+
+
+
 <form action="" method="POST" enctype="multipart/form-data" >
     {% csrf_token %}
 
@@ -13,6 +32,10 @@
 </table>
     <input type="submit" class="btn btn-success" value="Modificar">
 </form>
+
+</div>
+<br>
+<br>
 
 {{ mensaje }}
 

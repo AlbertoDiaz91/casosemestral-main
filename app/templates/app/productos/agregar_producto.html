@@ -1,7 +1,25 @@
-{% extends 'app/base.html' %}
+{% extends 'app/modeloproducto.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
 {% block contenido %}
+
+
+<br>
+<br>
+
+<div class="container pt3 text-center bg-info">
+
+<div class="container text-center  font-weight-bold">
+    <br>
+    <h1>Agregar Producto</h1>
+    <p >Aqui podras agregar productos.</p>
+    <br>
+    <img src="https://cdn-icons-png.flaticon.com/512/1949/1949617.png" class="" alt="Cinque Terre" height="200">
+
+  </div>
+<br>
+
+
 
 
 
@@ -16,6 +34,8 @@
     <input type="submit" class="btn btn-success" value="guardar">
 </form>
 
+</div>
+<br>
 {{ mensaje }}
 
 
