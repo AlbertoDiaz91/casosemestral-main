@@ -48,6 +48,7 @@ def sinregistro (request):
     
     if request.method == 'POST':
         carro = Productos_Carro()
+        carro.codigo_producto = request.POST.get('codigo_producto')
         carro.nombre_producto = request.POST.get('nombre_producto')
         carro.precio_producto = request.POST.get('precio_producto')
         carro.imagen_producto = request.POST.get('imagen_producto')
