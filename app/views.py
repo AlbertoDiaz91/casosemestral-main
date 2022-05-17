@@ -32,7 +32,10 @@ def gatos1 (request):
     return render(request, 'app/gatos1.html')
 
 def perro1 (request):
-    return render(request, 'app/perro1.html')
+    perroAll = Perro.objects.all()
+    datos = {
+        'listaPerros': perroAll}
+    return render(request, 'app/perro1.html', datos)
 
 
 def exotico1 (request):
@@ -68,10 +71,16 @@ def perro1con(request):
     
 
 def gatos1con (request):
-    return render(request, 'app/gatos1con.html')
+    gatoAll = Gato.objects.all()
+    datos = {
+        'listaGatos': gatoAll}
+    return render(request, 'app/gatos1con.html', datos)
 
 def exotico1con (request):
-    return render(request, 'app/exotico1con.html')
+    exoticoAll = Exotico.objects.all()
+    datos = {
+        'listaExoticos': exoticoAll}
+    return render(request, 'app/exotico1con.html', datos)
     
 def fundacion (request):
     return render(request, 'app/fundacion.html')

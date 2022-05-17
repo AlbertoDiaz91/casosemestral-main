@@ -47,3 +47,39 @@ class PerroForm(ModelForm):
         widgets = {
             'fecha_nacimiento' : forms.SelectDateWidget(years=range(2020,2023))
         }
+
+
+
+
+
+
+
+
+class GatoForm(ModelForm):
+
+    nombre = forms.CharField(min_length=5,max_length=20)
+    codigo = forms.CharField(min_length=9,max_length=9)
+
+    class Meta:
+        model = Gato
+        fields = ['codigo','nombre','raza_gato','imagen','fecha_nacimiento']
+
+        widgets = {
+            'fecha_nacimiento' : forms.SelectDateWidget(years=range(2020,2023))
+        }
+
+
+
+
+class ExoticoForm(ModelForm):
+
+    nombre = forms.CharField(min_length=5,max_length=20)
+    codigo = forms.CharField(min_length=9,max_length=9)
+
+    class Meta:
+        model = Exotico
+        fields = ['codigo','nombre','especie','imagen','fecha_nacimiento']
+
+        widgets = {
+            'fecha_nacimiento' : forms.SelectDateWidget(years=range(2020,2023))
+        }

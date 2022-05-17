@@ -33,7 +33,7 @@ class TipoCliente(models.Model):
     class Meta:
         db_table = 'db_tipo_cliente'
 
-
+# ****************** TIPOS DE MASCOTAS *********************
 
 class TipoPerro(models.Model):
     raza = models.CharField(max_length=20)
@@ -43,6 +43,31 @@ class TipoPerro(models.Model):
 
     class Meta:
         db_table = 'db_tipo_perro'
+
+
+
+
+
+class TipoGato(models.Model):
+    raza_gato = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.raza_gato
+
+    class Meta:
+        db_table = 'db_tipo_gato'
+
+
+
+
+class TipoExotico(models.Model):
+    especie = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.especie
+
+    class Meta:
+        db_table = 'db_tipo_exotico'
 
 
 
@@ -116,7 +141,7 @@ class Cliente(models.Model):
         db_table = 'db_cliente'
 
 
-
+# Modelo del perro
 class Perro(models.Model):
     codigo = models.CharField(null=False,primary_key=True,max_length=9)
     nombre = models.CharField(max_length=20)
@@ -131,7 +156,39 @@ class Perro(models.Model):
         db_table = 'db_perro'
 
 
+# Modelo del gato
 
+
+
+class Gato(models.Model):
+    codigo = models.CharField(null=False,primary_key=True,max_length=9)
+    nombre = models.CharField(max_length=20)
+    raza_gato = models.ForeignKey(TipoGato,on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to="gato", null=True)
+    fecha_nacimiento = models.DateField()
+
+    def _str_(self):
+        return self.nombre
+
+    class Meta:
+        db_table = 'db_gato'
+
+
+
+# Modelo del exotico
+
+class Exotico(models.Model):
+    codigo = models.CharField(null=False,primary_key=True,max_length=9)
+    nombre = models.CharField(max_length=20)
+    especie = models.ForeignKey(TipoExotico,on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to="exotico", null=True)
+    fecha_nacimiento = models.DateField()
+
+    def _str_(self):
+        return self.nombre
+
+    class Meta:
+        db_table = 'db_exotico'
 
 
 
