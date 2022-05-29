@@ -34,9 +34,23 @@
     <input type="submit" class="btn btn-success" value="guardar">
 </form>
 
+{% if messages %}
+                    {% for msj in messages %}
+                        <script>
+                            Swal.fire({
+                                title: 'Guardado!',
+                                text: '{{ msj }}',
+                                icon: 'success',
+                                showConfirmButton: false,
+                                timer: 2000
+                            });
+                        </script>
+                    {% endfor %}
+                {% endif %}
+
 </div>
 <br>
-{{ mensaje }}
+
 
 
 

@@ -27,22 +27,7 @@ class PedidoAdmin(admin.ModelAdmin):
     search_fields = ['numero']
     list_per_page = 3
 
-class PerroAdmin(admin.ModelAdmin):
-    list_display = ['codigo','nombre','raza','imagen','fecha_nacimiento']
-    search_fields = ['codigo']
-    list_per_page = 3
 
-
-class GatoAdmin(admin.ModelAdmin):
-    list_display = ['codigo','nombre','raza_gato','imagen','fecha_nacimiento']
-    search_fields = ['codigo']
-    list_per_page = 3
-
-
-class ExoticoAdmin(admin.ModelAdmin):
-    list_display = ['codigo','nombre','especie','imagen','fecha_nacimiento']
-    search_fields = ['codigo']
-    list_per_page = 3
 
 
 
@@ -62,16 +47,7 @@ admin.site.register(Pedido,PedidoAdmin)
 admin.site.register(TipoPedido)
 
 
-admin.site.register(Perro,PerroAdmin)
-admin.site.register(TipoPerro)
 
-
-admin.site.register(Gato,GatoAdmin)
-admin.site.register(TipoGato)
-
-
-admin.site.register(Exotico,ExoticoAdmin)
-admin.site.register(TipoExotico)
 
 
 

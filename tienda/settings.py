@@ -138,3 +138,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #( cuando vamos a guardar )
 
 CRISPY_TEMPLATE_PACL = 'bootstrap4'
 
+
+MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
+
+
+LOGIN_REDIRECT_URL = '/' # Para cuando iniciamos secion, ej: perfil
+LOGOUT_REDIRECT_URL = '/' # Para cuando cerremos secion

@@ -1,8 +1,19 @@
 from django import forms
 from django.forms import ModelForm
 from .models import *
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 # creamos un template de un formulario
+
+
+class RegistroUsuarioForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username','first_name','last_name','email','password1','password2']
+
+		
+
 
 class ProductoForm(ModelForm):
 
@@ -35,51 +46,3 @@ class ClienteForm(ModelForm):
 
 
 
-class PerroForm(ModelForm):
-
-    nombre = forms.CharField(min_length=5,max_length=20)
-    codigo = forms.CharField(min_length=9,max_length=9)
-
-    class Meta:
-        model = Perro
-        fields = ['codigo','nombre','raza','imagen','fecha_nacimiento']
-
-        widgets = {
-            'fecha_nacimiento' : forms.SelectDateWidget(years=range(2020,2023))
-        }
-
-
-
-
-
-
-
-
-class GatoForm(ModelForm):
-
-    nombre = forms.CharField(min_length=5,max_length=20)
-    codigo = forms.CharField(min_length=9,max_length=9)
-
-    class Meta:
-        model = Gato
-        fields = ['codigo','nombre','raza_gato','imagen','fecha_nacimiento']
-
-        widgets = {
-            'fecha_nacimiento' : forms.SelectDateWidget(years=range(2020,2023))
-        }
-
-
-
-
-class ExoticoForm(ModelForm):
-
-    nombre = forms.CharField(min_length=5,max_length=20)
-    codigo = forms.CharField(min_length=9,max_length=9)
-
-    class Meta:
-        model = Exotico
-        fields = ['codigo','nombre','especie','imagen','fecha_nacimiento']
-
-        widgets = {
-            'fecha_nacimiento' : forms.SelectDateWidget(years=range(2020,2023))
-        }

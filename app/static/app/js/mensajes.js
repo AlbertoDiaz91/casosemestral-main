@@ -80,25 +80,43 @@ function confirmDeletecarro(codigo_producto){
 
 
 // FUNCIONES SIN INICIO DE SESION (BOTONES DE INICIO Y REGISTRO)
-function inicioSecion(){
+
+
+
+
+
+
+// inicio trabajador 
+
+
+
+function inicioTrabajador(){
     Swal.fire({
         icon: 'success',
         title: 'Seción iniciada correctamente',
         text: 'Gracias por volver!'
         
     }).then(function () {
-            window.location.href = "/sinregistro/";
+            window.location.href = "/productos_agregar_producto/";
     })
 }
 
 
-function inicioRegistro(){
+
+
+
+
+
+// Aviso de compra
+
+
+function confirmCarro(){
     Swal.fire({
         icon: 'success',
-        title: 'Cuenta registrada correctamente',
-        //text: 'Gracias por volver!'
+        title: 'Seción iniciada correctamente',
+        text: 'Gracias por volver!'
         
     }).then(function () {
-            window.location.href = "/sinregistro/";
+            window.location.href = "/vercarro/";
     })
 }

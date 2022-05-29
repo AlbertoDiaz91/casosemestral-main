@@ -60,11 +60,7 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{% url 'listar_productos' %}"><i class="fa-solid fa-clipboard-list"></i> Listar Producto</a>
                 </li>
-                {% for aux in listaProductos %}
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{% url 'modificar_producto' aux.codigo %}"><i class="fa-solid fa-rotate"></i> Modificar produco</a>
-                </li>
-                {% endfor %}
+                
 
 
                 

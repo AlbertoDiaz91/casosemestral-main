@@ -6,16 +6,21 @@ from .models import *
 
 from .forms import * 
 
+from django.contrib import messages
+
+from django.contrib.auth import authenticate, login
+
+from django.contrib.auth.decorators import login_required, permission_required
+
+
+
+
+
 # Create your views here.
 
 #SECCION LISTAR
 
-def index(request):
-    productosAll = Producto.objects.all()
-    datos = {
-        'listaProductos': productosAll
-    }
-    return render(request,'app/index.html',datos)
+
 
     
 
@@ -28,23 +33,9 @@ def listar_clientes(request):
     return render(request,'app/listar_clientes.html',datos)
 
 
-def gatos1 (request):
-    return render(request, 'app/gatos1.html')
-
-def perro1 (request):
-    perroAll = Perro.objects.all()
-    datos = {
-        'listaPerros': perroAll}
-    return render(request, 'app/perro1.html', datos)
 
 
-def exotico1 (request):
-    return render(request, 'app/exotico1.html')
-
-
-
-
-def sinregistro (request):
+def index (request):
     productosAll = Producto.objects.all()
     datos = {'listaProductos': productosAll }
         
@@ -60,30 +51,31 @@ def sinregistro (request):
         
 
 
-    return render(request,'app/sinregistro.html',datos)
+    return render(request,'app/index.html',datos)
 
-def perro1con(request):
-    perroAll = Perro.objects.all()
-    datos = {
-        'listaPerros': perroAll
-    }
-    return render(request,'app/perro1con.html',datos)
+# Registro usuario
+def registro (request):
+    datos = {'form' : RegistroUsuarioForm()}
+
+    if request.method == 'POST':
+        formulario = RegistroUsuarioForm(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            #user = authenticate(username=formulario.cleaned_data["username"],password=formulario.cleaned_data["password1"])
+            #login(request,user)
+            messages.success(request,'Registrado correctamente!')
+            return redirect(to='index')
+        datos['form'] = formulario
     
-
-def gatos1con (request):
-    gatoAll = Gato.objects.all()
-    datos = {
-        'listaGatos': gatoAll}
-    return render(request, 'app/gatos1con.html', datos)
-
-def exotico1con (request):
-    exoticoAll = Exotico.objects.all()
-    datos = {
-        'listaExoticos': exoticoAll}
-    return render(request, 'app/exotico1con.html', datos)
-    
+    return render(request, 'registration/registro.html', datos)
+   
 def fundacion (request):
     return render(request, 'app/fundacion.html')
+
+
+def perfil (request):
+    return render(request, 'app/perfil.html')
+
 
 def historial (request):
     return render(request, 'app/historial.html')
@@ -112,7 +104,7 @@ def vercarroeliminar (request, codigo_producto):
 
 
 
-
+@permission_required('app.add_producto')
 def agregar_producto (request):
     datos = {
         'form' : ProductoForm()
@@ -121,13 +113,14 @@ def agregar_producto (request):
         formulario = ProductoForm(request.POST, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
-            datos['mensaje'] = "Producto guardado correctamente!"
+            messages.success(request,'Producto guardado correctamente!')
     return render(request, 'app/productos/agregar_producto.html',datos)
 
 
 
 
 # Seccion modificar (SE NECESITA ID)
+@login_required
 def modificar_producto (request, codigo):
     producto = Producto.objects.get(codigo=codigo)
     datos = {
@@ -137,7 +130,7 @@ def modificar_producto (request, codigo):
         formulario = ProductoForm(request.POST, files=request.FILES,instance=producto)
         if formulario.is_valid():
             formulario.save()
-            datos['mensaje'] = "Producto modificado correctamente!"
+            messages.success(request,'Producto modificado correctamente!')
             datos['form'] = formulario
 
     return render(request, 'app/productos/modificar_producto.html',datos)

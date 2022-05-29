@@ -36,8 +36,11 @@
                 </td>
                 <td>{{ aux.created_at }}</td>
                 <td>  
-
+                    {% if perms.app.change_producto %}
                     <a href="{% url 'modificar_producto' aux.codigo%}" class="btn btn-primary">Modificar</a>    
+                    {% endif %}
+
+                    
                     <a onclick="confirmDelete ({{ aux.codigo }})" class="btn btn-danger">Eliminar</a> 
                     
                 
