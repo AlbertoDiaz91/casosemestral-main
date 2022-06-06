@@ -5,6 +5,8 @@ urlpatterns = [
     path('', index ,name="index"),
     
     path('registro/', registro ,name="registro"),
+    path('apicualquiera/', apicualquiera ,name="apicualquiera"),
+    
   
     
     

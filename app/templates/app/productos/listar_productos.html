@@ -40,9 +40,9 @@
                     <a href="{% url 'modificar_producto' aux.codigo%}" class="btn btn-primary">Modificar</a>    
                     {% endif %}
 
-                    
+                    {% if perms.app.delete_producto %}
                     <a onclick="confirmDelete ({{ aux.codigo }})" class="btn btn-danger">Eliminar</a> 
-                    
+                    {% endif %}
                 
                 </td>
 

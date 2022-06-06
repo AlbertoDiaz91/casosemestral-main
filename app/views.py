@@ -1,3 +1,7 @@
+import requests
+
+
+
 from django.shortcuts import render, redirect
 
 from app.forms import ProductoForm, ClienteForm
@@ -6,10 +10,9 @@ from .models import *
 
 from .forms import * 
 
+# DJANGO
 from django.contrib import messages
-
 from django.contrib.auth import authenticate, login
-
 from django.contrib.auth.decorators import login_required, permission_required
 
 
@@ -34,10 +37,12 @@ def listar_clientes(request):
 
 
 
-
+  # apis de productos (nuestros) y api de digimon
 def index (request):
+    
     productosAll = Producto.objects.all()
-    datos = {'listaProductos': productosAll }
+    datos = {'listaProductos': productosAll}
+             
         
     
     if request.method == 'POST':
@@ -73,8 +78,12 @@ def fundacion (request):
     return render(request, 'app/fundacion.html')
 
 
-def perfil (request):
-    return render(request, 'app/perfil.html')
+# APIS
+
+
+def apicualquiera (request):
+    return render(request, 'app/apicualquiera.html')
+
 
 
 def historial (request):
@@ -120,7 +129,7 @@ def agregar_producto (request):
 
 
 # Seccion modificar (SE NECESITA ID)
-@login_required
+@permission_required('app.change_producto')
 def modificar_producto (request, codigo):
     producto = Producto.objects.get(codigo=codigo)
     datos = {
@@ -136,7 +145,7 @@ def modificar_producto (request, codigo):
     return render(request, 'app/productos/modificar_producto.html',datos)
 
 
-
+@permission_required('app.view_producto')
 def listar_productos(request):
     productosAll = Producto.objects.all()
     datos = {
@@ -145,6 +154,8 @@ def listar_productos(request):
     return render(request,'app/productos/listar_productos.html',datos)
 
 
+
+@permission_required('app.delete_producto')
 def eliminar_producto (request, codigo):
     producto = Producto.objects.get(codigo=codigo)
     producto.delete()

@@ -1,11 +1,38 @@
-<form action="" method="POST" >
 
-    {% csrf_token %}
+{% extends 'app/modelologin.html' %}
+{% load static %}
+{% block contenido %}
+{% load crispy_forms_tags %}
 
-    
-    
-    {{ form }}
 
-    <input type="submit" value="ingresar" class="btn btn-success mt-3 float-end">
+<div class="padding container-fluid d-flex justify-content-center">
+    <div class="col-md-4">
+              <div class="free-quote bg-dark h-100">
+                  <img src="http://127.0.0.1:8000/static/app/img/lindo-logo-tienda-mascotas-gato-perro_454510-56.fw.png" alt="" height="200" class="mx-auto d-block"  >
+                <h2 class="my-4 heading  text-center">Inicio de sesión</h2>
+                 <!-- {% csrf_token %} -->
+                 
+                <form action="" method="POST" >
+                  
+                  <div class="form-group mb-4">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                  </div>
+                  <div class="form-group   " >
+                    <input type="submit" value="ingresar" class="btn btn-success mt-3 float-center">
+                    <br>
+                    <br>
+                  </div>
+                </form>
+              </div>
+            </div>
+            </div>
 
-</form>
+
+
+<br><br><br>
+
+
+
+{% endblock %}
+
