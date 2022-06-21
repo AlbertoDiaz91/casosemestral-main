@@ -146,11 +146,39 @@ class Productos_Carro(models.Model):
     class Meta:
         db_table = 'db_productos_carro'
 
+# modelo carro
+
+
+class Productos_Segui(models.Model):
+    seg_codigo = models.IntegerField(null=False,primary_key=True)
+    seg_nombre = models.CharField(max_length=20)
+    seg_precio = models.IntegerField()
+    seg_imagen = models.ImageField(upload_to="productos_segui", null=True)
+    
+
+    def __str__(self):
+        return self.seg_nombre
+
+    class Meta:
+        db_table = 'db_productos_segui'
+
+
+
+
 class Carro (models.Model):
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'db_carro'
+
+
+
+
+class Suscripcion (models.Model):
+    suscripcion = models.BooleanField (null=True)
+    usuario = models.CharField(max_length=50, null=False,primary_key=True)
+
+    
 
 
 

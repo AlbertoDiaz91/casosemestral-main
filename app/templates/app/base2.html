@@ -49,7 +49,7 @@
 </head>
 
 <body>
-
+  
     <nav class="navbar navbar-expand-sm bg-success navbar-dark">
         <div class="container-fluid">
             {% if user.is_authenticated %}
@@ -103,10 +103,11 @@
 
                
 
-                
+                {% if perms.app.add_producto %}
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{% url 'agregar_producto' %}"><i class="fa-solid fa-cart-plus"></i> Agregar productos</a>
                 </li>
+                {% endif %}
 
 
 

@@ -114,7 +114,7 @@
                 </td>
                 <td>
                     <a onclick="confirmDeletecarro ({{ aux.codigo_producto }})" class="btn btn-danger">Eliminar</a>
-    
+                    
                 </td>
     
             </tr>
@@ -124,10 +124,22 @@
     
     </table>         
 
+ 
+    {% for aux in listaCarrito %}
+                    {% if user.is_authenticated %}
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            
+                            <input type="hidden" name="seg_codigo" id="seg_codigo" value="{{ aux.codigo_producto }}">
+                            <input type="hidden" name="seg_nombre" id="seg_nombre" value="{{ aux.nombre_producto }}">
+                            <input type="hidden" name="seg_precio" id="seg_precio" value="{{ aux.precio_producto }}">
+                            <input type="hidden" name="seg_imagen" id="seg_imagen" value="{{ aux.imagen_producto }}">
 
-
-                        
-
+                            <input type="submit" style="cursor: pointer;" class="btn btn-danger  btn-sm ">
+                         
+                        </form>
+                    {% endif %}      
+                    {% endfor %}
                                         
                     
 

@@ -6,6 +6,7 @@ urlpatterns = [
     
     path('registro/', registro ,name="registro"),
     path('apicualquiera/', apicualquiera ,name="apicualquiera"),
+    path('suscripcion/', suscripcion ,name="suscripcion"),
     
   
     

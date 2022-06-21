@@ -24,6 +24,17 @@ from django.contrib.auth.decorators import login_required, permission_required
 #SECCION LISTAR
 
 
+def suscripcion (request):
+
+    if request.method == 'POST':
+        suscripcion = Suscripcion ()
+        suscripcion.suscripcion = request.POST.get('suscribirse')
+        suscripcion.usuario = request.POST.get('usuario')
+        
+        suscripcion.save()
+
+    return render(request, 'app/suscripcion.html')
+
 
     
 
@@ -90,7 +101,13 @@ def historial (request):
     return render(request, 'app/historial.html')
 
 def segui (request):
-    return render(request, 'app/segui.html')
+    segui = Productos_Segui.objects.all()
+    datos = {'listaCarrito': segui }
+
+
+
+
+    return render(request, 'app/segui.html', datos)
 
 
  # Funciones de vercarro
@@ -98,6 +115,16 @@ def segui (request):
 def vercarro (request):
     carro = Productos_Carro.objects.all()
     datos = {'listaCarrito': carro }
+
+    if request.method == 'POST':
+        segui = Productos_Segui()
+        segui.seg_codigo = request.POST.get('seg_codigo')
+        segui.seg_nombre = request.POST.get('seg_nombre')
+        segui.seg_precio = request.POST.get('seg_precio')
+        segui.seg_imagen = request.POST.get('seg_imagen')
+        segui.save()
+
+
 
     return render(request, 'app/vercarro.html',datos)
 
