@@ -138,6 +138,7 @@ class Productos_Carro(models.Model):
     nombre_producto = models.CharField(max_length=20)
     precio_producto = models.IntegerField()
     imagen_producto = models.ImageField(upload_to="productos_carro", null=True)
+    stock_producto = models.IntegerField()
     
 
     def __str__(self):
@@ -154,6 +155,7 @@ class Productos_Segui(models.Model):
     seg_nombre = models.CharField(max_length=20)
     seg_precio = models.IntegerField()
     seg_imagen = models.ImageField(upload_to="productos_segui", null=True)
+    seg_stock = models.IntegerField()
     
 
     def __str__(self):

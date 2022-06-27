@@ -62,6 +62,7 @@ def index (request):
         carro.nombre_producto = request.POST.get('nombre_producto')
         carro.precio_producto = request.POST.get('precio_producto')
         carro.imagen_producto = request.POST.get('imagen_producto')
+        carro.stock_producto = request.POST.get('stock_producto')
         carro.save()
         
         
@@ -114,7 +115,12 @@ def segui (request):
 
 def vercarro (request):
     carro = Productos_Carro.objects.all()
-    datos = {'listaCarrito': carro }
+    datos = {
+        'listaCarrito': carro,
+        'total' : sum(aux.precio_producto for aux in carro),
+        'descuento' : round(sum(aux.precio_producto for aux in carro) *  0.05),
+        'totalVerdad' : round(sum(aux.precio_producto for aux in carro) *  0.95)
+    } 
 
     if request.method == 'POST':
         segui = Productos_Segui()
@@ -122,7 +128,10 @@ def vercarro (request):
         segui.seg_nombre = request.POST.get('seg_nombre')
         segui.seg_precio = request.POST.get('seg_precio')
         segui.seg_imagen = request.POST.get('seg_imagen')
+        segui.seg_stock = request.POST.get('seg_stock')
         segui.save()
+
+        
 
 
 
@@ -134,6 +143,14 @@ def vercarroeliminar (request, codigo_producto):
     producto.delete()
 
     return redirect(to="vercarro")
+
+
+
+def seguieliminar (request, seg_codigo):
+    producto = Productos_Segui.objects.get(seg_codigo=seg_codigo)
+    producto.delete()
+
+    return redirect(to="segui")
 
 
 

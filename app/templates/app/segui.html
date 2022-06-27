@@ -15,8 +15,9 @@
             <th>NOMBRE</th>
             <th>PRECIO</th>
             <th>IMAGEN</th>
+            <th>STOCK</th>
             <th>OPCIONES</th>
-
+ 
         </tr>
     </thead>
     <TBody>
@@ -31,8 +32,9 @@
                 <img src="{{ aux.seg_imagen.url }}" alt="" width="80">
                 {% endif %}
             </td>
+            <td>{{ aux.seg_stock }}</td>
             <td>
-                <a onclick="confirmDeletecarro ({{ aux.codigo_producto }})" class="btn btn-danger">Eliminar</a>
+                <a onclick="confirmDeletesegui ({{ aux.seg_codigo }})" class="btn btn-danger">Eliminar</a>
                 
             </td>
 

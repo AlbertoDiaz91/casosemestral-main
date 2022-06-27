@@ -75,7 +75,40 @@ function confirmDeletecarro(codigo_producto){
         }
     })
     
-    }
+}
+
+
+// Confirmar delete de Seguimiento
+
+
+
+function confirmDeletesegui(seg_codigo){
+    Swal.fire({
+        icon: 'warning',
+        title: '¿Estas seguro?',
+        text: 'No podras deshacer esta accion!',
+        showCancelButton: true,
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Si, Eliminar!",
+        confirmButtonColor: '#3085d6',
+        cancelButtonText: "Cancelar"
+    }).then((result) => {
+        if (result.value) {
+            Swal.fire(
+                'Eliminado!',
+                'Producto Eliminado Correctamente.',
+                'success'
+            ).then(function () {
+                window.location.href = "/seguieliminar/" + seg_codigo + "/";
+            })
+        }
+    })
+    
+}
+
+
+
+
 
 
 

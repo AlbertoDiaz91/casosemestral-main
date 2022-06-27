@@ -3,13 +3,66 @@
 {% block contenido %}
  
 <br><br>
-<div class="padding container-fluid d-flex justify-content-center">
+
+
+<div class='container mx-auto mt-5 col-md-10 col-11'>
+  <div class="row" style="justify-content: center">
+      <div class="card col-md-3 col-11">
+          <div class="card-content">
+              <div class="card-body p-0">
+                  <div class="profile mb-4 mt-3"> <img src="https://www.fundacionanimalove.org/images/2021/09/06/perro.jpg" height="100"> </div>
+                  <div class="card-subtitle">
+                      <p> <small class="text-muted"> <i class="fas fa-quote-left"></i>  Somos una fundación sin fines de lucro que busca colaborar vendiendo productos y accesorios para así poder apoyar a los animales que estén en situación de calle y abandono. <i class="fas fa-quote-left fa-flip-horizontal"></i> </small> </p>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+      <div class="card col-md-3 col-5 second">
+          <div class="card-content">
+              <div class="card-body p-0">
+                  <div class="profile mb-4 mt-3"> <img src="https://images-ext-2.discordapp.net/external/Kzp0Mw0lEp9DtyXHNkStPcewBRLGFw0IKrRjVvPfr7E/https/minuevomejoramigo.com/wp-content/uploads/2021/09/banner-adopta.png" height="100"> </div>
+                  <div class="card-subtitle">
+                      <p> <small class="text-muted"> <i class="fas fa-quote-left "></i> de esta manera fomentamos la adopción de animales para que así logren tener una vida digna. <i class="fas fa-quote-left fa-flip-horizontal"></i> </small> </p>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+      <div class="card col-md-3 col-5 third">
+          <div class="card-content">
+              <div class="card-body p-0">
+                  <div class="profile mb-4 mt-3"> <img src="https://www.adoptanocompres.org/wp-content/uploads/slider4/banners-06.png" height="95"> </div>
+                  <div class="card-subtitle">
+                      <p> <small class="text-muted"> <i class="fas fa-quote-left"></i> Buscamos el apoyo voluntario de distintas personas para poder llevar a cabo nuestro proyecto, puede subscribirse a nuestra fundación a través de una donación que le otorgara un 5% de descuento en el total 
+                        de su compra. <i class="fas fa-quote-left fa-flip-horizontal"></i> </small> </p>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<br><br>
+  
+<div class="padding container-fluid d-flex justify-content-center"  style="margin-bottom: 200px; ">
     <div class="col-md-4">
-              <div class="free-quote bg-dark h-100">
+              <div class="free-quote bg-success h-100">
                   <img src="http://127.0.0.1:8000/static/app/img/lindo-logo-tienda-mascotas-gato-perro_454510-56.fw.png" alt="" height="200" class="mx-auto d-block"  >
-                <h2 class="my-4 heading  text-center">Sub</h2>
+                <h2 class="my-4 heading  text-white text-center" style="font-size: 25px;" >Contamos contigo para llevar a cabo nuestro objetivo, danos una mano y dales una pata</h2>
+                <h2 style="margin-left:260px ;" > <i class="fa-solid fa-paw"></i> </h2>
                   
                 
+                
+
+
+
+
+
+
+
+
 
 
                  <form action="" method="POST">
@@ -18,7 +71,7 @@
                     <input type="hidden" name="suscribirse" id="suscribirse" value="True">
                     <input type="hidden" name="usuario" id="usuario" value="{{ user.username }}">
                     {% csrf_token %} 
-                    <input type="submit" value="suscribirse" class="btn btn-success mt-3 text-center">
+                    <input type="submit"  style="margin-left:130px; width:300px ; " value="suscribirse" class="btn btn-info mt-3 text-center">
        
                 </form>
 
@@ -33,7 +86,7 @@
                   <input type="hidden" name="suscribirse" id="suscribirse" value="False">
                   <input type="hidden" name="usuario" id="usuario" value="{{ user.username }}">
                   {% csrf_token %} 
-                  <input type="submit" value="Desuscribirse" class="btn btn-danger mt-3 text-center">
+                  <input type="submit"   style="margin-left:130px ; margin-bottom: 30px  ; width:300px ; " value="Desuscribirse" class="btn btn-danger mt-3 ">
                   
                   
               </form>

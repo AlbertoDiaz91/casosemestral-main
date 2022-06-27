@@ -87,74 +87,123 @@
 
     
 
-    <table class="table table-striped table-condensed">
-        <thead>
-    
-            <tr>
-    
-                <th>CODIGO</th>
-                <th>NOMBRE</th>
-                <th>PRECIO</th>
-                <th>IMAGEN</th>
-                <th>OPCIONES</th>
-    
-            </tr>
-        </thead>
-        <TBody>
-            {% for aux in listaCarrito %}
-            <tr>
-    
-                <td>{{ aux.codigo_producto }}</td>
-                <td>{{ aux.nombre_producto }}</td>
-                <td>{{ aux.precio_producto }}</td>
-                <td>
-                    {% if aux.imagen_producto %}
-                    <img src="{{ aux.imagen_producto.url }}" alt="" width="80">
-                    {% endif %}
-                </td>
-                <td>
-                    <a onclick="confirmDeletecarro ({{ aux.codigo_producto }})" class="btn btn-danger">Eliminar</a>
-                    
-                </td>
-    
-            </tr>
-    
-            {% endfor %}
-        </tbody>
-    
-    </table>         
+         
 
- 
+    
+
     {% for aux in listaCarrito %}
+    <div class="container bg-white rounded-top mt-5" id="zero-pad">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-10 col-12 pt-3">
+                <div class="d-flex" style="justify-content: center;">
+                    
+                </div>
+                <div class="d-flex flex-column pt-4">
+                    <div><h5 class="text-uppercase font-weight-normal"></h5></div>
+                </div>
+                <div class="d-flex flex-row px-lg-5 mx-lg-5 mobile" id="heading">
+                    <div class="px-lg-5 mr-lg-5" style="margin-left: 60px ;"   id="produc">Producto</div>
+                    <div class="px-lg-5 ml-lg-5" id="prc">Precio</div>
+                </div>
+                <div class="d-flex flex-row justify-content-between align-items-center pt-lg-4 pt-2 pb-3 border-bottom mobile">
+                    <div class="d-flex flex-row align-items-center">
+                        {% if aux.imagen_producto %}
+                        <img src="{{ aux.imagen_producto.url }}" alt="" width="150">
+                        {% endif %}
+                        <div class="d-flex flex-column pl-md-3 pl-1">
+                            <div style="margin-left:30px ;"><h6>{{ aux.nombre_producto }}</h6></div>
+                            <div style="margin-left:30px ;">Codigo de producto:<span class="pl-2" >{{ aux.codigo_producto }}</span></div>
+                        </div>                    
+                    </div>
+                    <div class="pl-md-0 pl-1" style="margin-right: 235px ;"><b>${{ aux.precio_producto }}</b></div>
+                    <a onclick="confirmDeletecarro ({{ aux.codigo_producto }})" class="btn btn-danger">Eliminar</a>
                     {% if user.is_authenticated %}
-                        <form action="" method="POST">
+                    <form action="" method="POST">
                             {% csrf_token %}
                             
                             <input type="hidden" name="seg_codigo" id="seg_codigo" value="{{ aux.codigo_producto }}">
                             <input type="hidden" name="seg_nombre" id="seg_nombre" value="{{ aux.nombre_producto }}">
                             <input type="hidden" name="seg_precio" id="seg_precio" value="{{ aux.precio_producto }}">
                             <input type="hidden" name="seg_imagen" id="seg_imagen" value="{{ aux.imagen_producto }}">
+                            <input type="hidden" name="seg_stock" id="seg_stock" value="{{ aux.stock_producto }}">
+                            
+                            
+                            
+                            
 
-                            <input type="submit" style="cursor: pointer;" class="btn btn-danger  btn-sm ">
-                         
-                        </form>
-                    {% endif %}      
-                    {% endfor %}
+                            <input type="submit" style=" font-size: 19px; cursor: pointer;" class="btn btn-success  btn-sm">
+                    </form>
+
+
+                {% endif %}      
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {% endfor %}
+
+
+
+
+
+
+
+ <!-- Modal footer 
+    {% for aux in listaCarrito %}
+                    
+                {% if user.is_authenticated %}
+                    <form action="" method="POST">
+                            {% csrf_token %}
+                            
+                            <input type="hidden" name="seg_codigo" id="seg_codigo" value="{{ aux.codigo_producto }}">
+                            <input type="hidden" name="seg_nombre" id="seg_nombre" value="{{ aux.nombre_producto }}">
+                            <input type="hidden" name="seg_precio" id="seg_precio" value="{{ aux.precio_producto }}">
+                            <input type="hidden" name="seg_imagen" id="seg_imagen" value="{{ aux.imagen_producto }}">
+                            <input type="hidden" name="seg_stock" id="seg_stock" value="{{ aux.stock_producto }}">
+                            
+                            
+                            
+                            
+
+                            <input type="submit" style="cursor: pointer;" class="btn btn-danger  btn-sm">
+                    </form>
+
+
+                {% endif %}      
+    {% endfor %}
+--->
+
+                    
                                         
                     
 
 
-                        
-                        <div class="order_total">
-                            <div class="order_total_content text-md-right">
-                                <div class="order_total_title">Orden Total:
-                                    Precio reajustado :
-                                </div>
-                                
-                                <div class="order_total_amount">$8.075</div>
-                                
-                            </div>
-                        </div>
+                    
+<div class="order_total">
+    <div class="order_total_content text-md-right">
+        <div class="order_total_title">
+            Total :
+        </div>
+        
+        <div class="order_total_amount">${{ total }}</div>
+
+        {% if perms.app.delete_producto %}
+
+        <div class="order_total_title">
+            Descuento:
+        </div>
+        <div class="order_total_amount">  ${{ descuento }}</div>
+        <div class="order_total_title">
+            Total Descuento:
+        </div>
+        <div class="order_total_amount">  ${{ totalVerdad }}</div>
+        {% endif %}
+        
+    </div>
+</div>
+                    
+                     
 
                         
 
@@ -182,79 +231,12 @@
 
 
 
-
-
-                        
-
-                        
-
-
-
-
-
-
                         <div class="cart_buttons"> 
                             <a href="{% url 'index' %}">
                             <button type="button" class="btn btn-primary launch  bg-danger" data-toggle=""  data-target="#staticBackdrop"> <i class="fa-solid fa-shop"></i> Seguir comprando
                             </button>
                         </a>
 
-
-                            <button type="button" class="btn btn-primary launch" data-toggle="modal" data-target="#staticBackdrop"> <i class="fa-solid fa-credit-card"></i> Pagar Ahora
-                            </button>
-                            <!-- Modal -->
-                            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <div class="text-right"> <i class="fa fa-close close" data-dismiss="modal"></i> </div>
-                                            <div class="tabs mt-3">
-                                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                                    <li class="nav-item" role="presentation"> <a class="nav-link active" id="visa-tab" data-toggle="tab" href="#visa" role="tab" aria-controls="visa" aria-selected="true"> <img src="https://www.nicepng.com/png/detail/427-4274075_aceptamos-tarjetas-de-credito-png-we-accept-these.png" width="80"> </a> </li>
-                                                    <li class="nav-item" role="presentation"> <a class="nav-link" id="paypal-tab" data-toggle="tab" href="#paypal" role="tab" aria-controls="paypal" aria-selected="false"> <img src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png" width="80"> </a> </li>
-                                                </ul>
-                                                <div class="tab-content" id="myTabContent">
-                                                    <div class="tab-pane fade show active" id="visa" role="tabpanel" aria-labelledby="visa-tab">
-                                                        <div class="mt-4 mx-4">
-                                                            <div class="text-center">
-                                                                <h5>Tarjeta de credito</h5>
-                                                            </div>
-                                                            <div class="form mt-3">
-                                                                <div class="inputbox"> <input type="text" name="name" class="form-control" required="required"> <span>Nombre del titular</span> </div>
-                                                                <div class="inputbox"> <input type="text" name="name" min="1" max="999" class="form-control" required="required"> <span> Numero de Tarjeta</span> <i class="fa fa-eye"></i> </div>
-                                                                <div class="d-flex flex-row">
-                                                                    <div class="inputbox"> <input type="text" name="name" min="1" max="999" class="form-control" required="required"> <span>Fecha de expiración</span> </div>
-                                                                    <div class="inputbox"> <input type="text" name="name" min="1" max="999" class="form-control" required="required"> <span>CVV</span> </div>
-                                                                </div>
-                                                                <div class="px-5 pay"> 
-
-                                                                    <a onclick="confirmCarro()"  class="btn btn-success" role="button">Iniciar sesion</a>
-
-                                                                   
-                                                                
-                                                                </div>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                    </div>
-                                                    <div class="tab-pane fade" id="paypal" role="tabpanel" aria-labelledby="paypal-tab">
-                                                        <div class="px-5 mt-5">
-                                                            <div class="inputbox"> <input type="text" name="name" class="form-control" required="required"> <span>Correo Paypal</span> </div>
-                                                            <div class="pay px-5"> <button class="btn btn-primary btn-block">Pagar con paypal</button> </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>      
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 {% endblock %}

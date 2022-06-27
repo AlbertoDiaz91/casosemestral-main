@@ -64,7 +64,9 @@
             {% if user.is_authenticated %}
             <li>
             
-             BIENVENIDO {{ user.username }}
+              <h3 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ; margin-right: 30px ; "> BIENVENIDO  </h3>
+              <h2 style="margin-left: 35px; font-family: 'Times New Roman', Times, serif; " >{{ user.username }} </h2>
+              <h4 style="margin-left: 63px;"> <i class="fa-solid fa-paw"></i>  </h4>
                     
             </li>
             {% endif %}
@@ -81,6 +83,7 @@
                         <a class="nav-link  bg-success text-white" href="{% url 'historial' %}"><i class="fa-solid fa-cart-shopping"></i> Historial</a>
                         <a class="nav-link  bg-success text-white" href="{% url 'segui' %}"><i class="fa-solid fa-truck"></i> Seguimiento</a>
                         <a class="nav-link  bg-success text-white" href="{% url 'vercarro' %}"><i class="fa-solid fa-cart-shopping"></i> Ver Carrito</a>
+                        <a class="nav-link  bg-success text-white" href="{% url 'suscripcion' %}"><i class="fa-solid fa-cart-shopping"></i> Suscribirse</a>
                     </div>
                   </li>
                 {% endif %}
@@ -136,6 +139,11 @@
                         <a class="nav-link text-white" href="{% url 'registro' %}"><i class="fa-solid fa-person-circle-plus"></i> Registrate </a>  
                         
                     </li>
+
+
+
+
+                    
 
                     {% endif %}
                     

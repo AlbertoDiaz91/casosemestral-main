@@ -18,7 +18,11 @@ urlpatterns = [
    
     path('fundacion/', fundacion ,name="fundacion"),
     path('historial/', historial ,name="historial"),
+
+
     path('segui/', segui ,name="segui"),
+    path('seguieliminar/<seg_codigo>/', seguieliminar ,name="seguieliminar"),
+
 
     path('vercarro/', vercarro ,name="vercarro"),
     path('vercarroeliminar/<codigo_producto>/', vercarroeliminar ,name="vercarroeliminar"),

@@ -47,6 +47,10 @@
                         <dd class="font-italic">- {{ aux.tipo }}</dd>
                         <dt>Codigo de producto</dt>
                         <dd class="font-italic">- {{ aux.codigo }}</dd>
+                        {% if user.is_authenticated %}
+                        <dt>Stock</dt>
+                        <dd class="font-italic">- {{ aux.stock }}</dd>
+                        {% endif %}
 
                         {% if user.is_authenticated %}
                         <form action="" method="POST">
@@ -56,6 +60,7 @@
                             <input type="hidden" name="nombre_producto" id="nombre_producto" value="{{ aux.nombre }}">
                             <input type="hidden" name="precio_producto" id="precio_producto" value="{{ aux.precio }}">
                             <input type="hidden" name="imagen_producto" id="imagen_producto" value="{{ aux.imagen }}">
+                            <input type="hidden" name="stock_producto" id="stock_producto" value="{{ aux.stock }}">
 
                             <input type="submit" style="cursor: pointer;" class="btn btn-danger  btn-sm ">
                          
