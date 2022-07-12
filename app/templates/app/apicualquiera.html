@@ -5,16 +5,16 @@
 <br>
 <br>
 <br>
+ 
 
-<!-- lista json
 <div class="container mt-100">
     <div class="row">
-        {% for aux in listaDG %} 
+        {% for aux in listaJson %} 
         <div class="col-md-4 col-sm-6">
             <div class="card mb-30 mt-5 "><a class="card-img-tiles" href="#" data-abc="true">
                     <div class="inner"> 
                     {% if aux.imagen %}
-                        <img src="{{ aux.PicUrl.url }}"  class="mx-auto d-block" width="200">
+                        <img src="{{ aux.imagen }}"  class="mx-auto d-block" width="200">
                     {% else %}
                     <div class="main-img mx-auto d-block"><img
                                 src="https://http2.mlstatic.com/medalla-chapita-llavero-mascotas-perros-gatos-foto-souvenirs-D_NQ_NP_845227-MLA28239414256_092018-F.jpg"
@@ -69,6 +69,6 @@
     </div>
 </div>
 
--->
+
 
 {% endblock %}

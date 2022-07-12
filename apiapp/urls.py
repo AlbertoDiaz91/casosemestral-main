@@ -6,6 +6,7 @@ from .views import *
 # SE ENCARGA DE DARLE UNA RUTA AL API
 router = routers.DefaultRouter()
 router.register('producto', ProductoViewSet)
+router.register('tipoproducto', TipoProductoViewSet)
 
 
 urlpatterns = [

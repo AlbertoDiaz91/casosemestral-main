@@ -1,7 +1,7 @@
 import requests
 
 
-
+from django.contrib.auth.models import User, Group
 from django.shortcuts import render, redirect
 
 from app.forms import ProductoForm, ClienteForm
@@ -50,9 +50,17 @@ def listar_clientes(request):
 
   # apis de productos (nuestros) y api de digimon
 def index (request):
+
     
+    response2 = requests.get('https://digimon-api.vercel.app/api/digimon').json()
+     
+    
+
     productosAll = Producto.objects.all()
-    datos = {'listaProductos': productosAll}
+    datos = {'listaProductos': productosAll,
+             'listaPet' : response2
+             
+    }
              
         
     
@@ -64,10 +72,16 @@ def index (request):
         carro.imagen_producto = request.POST.get('imagen_producto')
         carro.stock_producto = request.POST.get('stock_producto')
         carro.save()
-        
-        
+        stocks = request.POST.get('stock_producto')
+        codigop = request.POST.get('codigo_producto')
+        producto = Producto.objects.get(codigo=int(codigop))
+        producto.stock -= int(stocks)
+        producto.save()
+    
+    
 
-
+    
+   
     return render(request,'app/index.html',datos)
 
 # Registro usuario
@@ -78,6 +92,10 @@ def registro (request):
         formulario = RegistroUsuarioForm(request.POST)
         if formulario.is_valid():
             formulario.save()
+            g = Group.objects.get(name='cliente')
+            users = User.objects.all()
+            for u in users:
+                g.user_set.add(u)
             #user = authenticate(username=formulario.cleaned_data["username"],password=formulario.cleaned_data["password1"])
             #login(request,user)
             messages.success(request,'Registrado correctamente!')
@@ -94,12 +112,18 @@ def fundacion (request):
 
 
 def apicualquiera (request):
-    return render(request, 'app/apicualquiera.html')
+    response = requests.get('http://127.0.0.1:8000/api/producto/').json()
+    datos = { 
+        'listaJson' : response,
+    }
+
+    return render(request, 'app/apicualquiera.html',datos)
 
 
 
 def historial (request):
     return render(request, 'app/historial.html')
+
 
 def segui (request):
     segui = Productos_Segui.objects.all()
@@ -117,9 +141,11 @@ def vercarro (request):
     carro = Productos_Carro.objects.all()
     datos = {
         'listaCarrito': carro,
-        'total' : sum(aux.precio_producto for aux in carro),
+        
+        'total' : round(sum(aux.precio_producto * aux.stock_producto for aux in carro)),
         'descuento' : round(sum(aux.precio_producto for aux in carro) *  0.05),
-        'totalVerdad' : round(sum(aux.precio_producto for aux in carro) *  0.95)
+        'totalVerdad' : round(sum(aux.precio_producto for aux in carro) *  0.95),
+        
     } 
 
     if request.method == 'POST':
